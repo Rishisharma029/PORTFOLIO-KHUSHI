@@ -17,7 +17,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest({HomeController.class, CustomErrorController.class})
 @Import({PortfolioService.class, ContactMessageRepository.class})
 public class StaticSiteExportTest {
 
@@ -48,6 +48,19 @@ public class StaticSiteExportTest {
         // Write rendered index.html
         Path indexHtmlPath = distDir.resolve("index.html");
         Files.writeString(indexHtmlPath, htmlContent);
+
+        // Render and write 404.html for GitHub Pages fallback
+        MvcResult result404 = mockMvc.perform(get("/404"))
+                .andExpect(status().isOk())
+                .andReturn();
+        String html404 = result404.getResponse().getContentAsString();
+        html404 = html404.replace("href=\"/css/", "href=\"./css/")
+                         .replace("src=\"/js/", "src=\"./js/")
+                         .replace("src=\"/images/", "src=\"./images/")
+                         .replace("href=\"/images/", "href=\"./images/")
+                         .replace("content=\"/images/", "content=\"./images/")
+                         .replace("href=\"/favicon.ico\"", "href=\"./favicon.ico\"");
+        Files.writeString(distDir.resolve("404.html"), html404);
 
         // Copy static resources (css, js, images, favicon.ico)
         Path staticDir = Paths.get("src/main/resources/static");

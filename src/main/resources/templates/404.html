@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Khushi Singh</title>
+    <meta name="description" content="The requested page could not be found. Return to Khushi Singh's Java Full Stack Developer portfolio.">
+    <meta name="theme-color" content="#0e0417">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" th:href="@{/images/favicon.svg}" href="./images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/favicon-32x32.png}" href="./images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/images/apple-touch-icon.png}" href="./images/apple-touch-icon.png">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" href="./favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="./css/style.css">
+</head>
+<body class="error-page-body">
+
+    <!-- Ambient Sparkles -->
+    <div class="sparkle sp-left" aria-hidden="true" style="top: 15%; left: 8%;">✦</div>
+    <div class="sparkle sp-right" aria-hidden="true" style="top: 25%; right: 10%;">✦</div>
+    <div class="sparkle sp-far-right" aria-hidden="true" style="bottom: 20%; left: 15%;">✦</div>
+
+    <main class="error-page-wrapper">
+        <div class="error-card-container">
+            
+            <!-- Category Badge -->
+            <div class="error-badge-wrap">
+                <span>✦</span>
+                <span>404 • Endpoint Not Found</span>
+            </div>
+
+            <!-- Glowing 404 Headline -->
+            <div class="error-404-glitch" aria-label="Error 404">404</div>
+
+            <!-- Title & Subtitle -->
+            <h1 class="error-title">You've ventured beyond the codebase</h1>
+            <p class="error-description">
+                The resource or endpoint you requested might have been refactored, moved, or doesn't exist in this deployment.
+            </p>
+
+            <!-- Interactive Terminal Preview Box -->
+            <div class="error-terminal-box">
+                <div class="error-terminal-header">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                    <span style="margin-left: 8px; font-size: 0.75rem; color: #a1a1aa;">bash — spring-boot-router</span>
+                </div>
+                <div class="error-terminal-line">
+                    <span class="term-kw">GET</span> <span class="term-dim">/requested-resource</span> <span class="term-err">HTTP/1.1 404 NOT FOUND</span>
+                </div>
+                <div class="error-terminal-line">
+                    <span class="term-dim">&gt; No route mapping found in DispatcherServlet</span>
+                </div>
+                <div class="error-terminal-line">
+                    <span style="color: #34d399;">&gt; Suggested Action: Return to safe root "/"</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="error-action-buttons">
+                <a th:href="@{/}" href="./index.html" class="error-btn-primary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Return to Homepage</span>
+                </a>
+
+                <a th:href="@{/#projects}" href="./index.html#projects" class="error-btn-secondary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>Explore Projects</span>
+                </a>
+
+                <a th:href="@{/#contact}" href="./index.html#contact" class="error-btn-secondary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+
+            <!-- Footer Branding -->
+            <div class="error-footer-brand">
+                <span>✦ Crafted by </span>
+                <strong th:text="${profile != null ? profile.name : 'Khushi Singh'}">Khushi Singh</strong>
+                <span> • Java Full Stack Developer</span>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

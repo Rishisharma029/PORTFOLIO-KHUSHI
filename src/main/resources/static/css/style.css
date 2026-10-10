@@ -2617,3 +2617,202 @@ a.contact-entry-row:hover {
     text-align: right;
     font-style: normal;
 }
+
+/* ==========================================================================
+   8. CUSTOM 404 ERROR PAGE STYLES
+   ========================================================================== */
+.error-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-card-container {
+    max-width: 680px;
+    width: 100%;
+    background: rgba(14, 9, 23, 0.88);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+    padding: 56px 40px 48px;
+    box-shadow: var(--shadow-card), 0 0 80px rgba(124, 58, 237, 0.22);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.error-badge-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(168, 85, 247, 0.14);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: var(--radius-pill);
+    color: var(--accent-lavender);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.error-404-glitch {
+    font-size: clamp(5rem, 14vw, 8.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 40%, #a855f7 75%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.45));
+    user-select: none;
+}
+
+.error-title {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+}
+
+.error-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto 28px;
+}
+
+.error-terminal-box {
+    background: rgba(10, 6, 17, 0.95);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: left;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.82rem;
+    color: #c084fc;
+    margin-bottom: 32px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.error-terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.error-terminal-line {
+    margin: 3px 0;
+    line-height: 1.4;
+    color: #e4e4e7;
+}
+
+.error-terminal-line .term-dim {
+    color: #71717a;
+}
+
+.error-terminal-line .term-err {
+    color: #f43f5e;
+    font-weight: 600;
+}
+
+.error-terminal-line .term-kw {
+    color: #a855f7;
+}
+
+.error-action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.error-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.92rem;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.45);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.error-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 26px rgba(168, 85, 247, 0.6);
+}
+
+.error-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: #f4f4f5;
+    font-weight: 600;
+    font-size: 0.92rem;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.error-btn-secondary:hover {
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(192, 132, 252, 0.6);
+    transform: translateY(-2px);
+}
+
+.error-footer-brand {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+.error-footer-brand strong {
+    color: #e9d5ff;
+}
+
+@media (max-width: 680px) {
+    .error-card-container {
+        padding: 40px 24px 32px;
+    }
+    .error-action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .error-btn-primary, .error-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
