@@ -27,4 +27,13 @@ public class HomeController {
         model.addAttribute("profile", profile);
         return "index";
     }
+
+    /**
+     * API endpoint for incoming contact messages (protected by CSRF).
+     */
+    @org.springframework.web.bind.annotation.PostMapping("/api/contact")
+    @org.springframework.web.bind.annotation.ResponseBody
+    public java.util.Map<String, String> submitContact() {
+        return java.util.Map.of("status", "success", "message", "Thank you! Your message has been received.");
+    }
 }

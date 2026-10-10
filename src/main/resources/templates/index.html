@@ -10,6 +10,11 @@
     <meta name="theme-color" content="#0e0417">
     <meta name="color-scheme" content="dark">
 
+    <!-- CSRF Protection Tokens -->
+    <meta name="_csrf" th:content="${_csrf != null ? _csrf.token : ''}" content="">
+    <meta name="_csrf_header" th:content="${_csrf != null ? _csrf.headerName : 'X-CSRF-TOKEN'}" content="X-CSRF-TOKEN">
+    <meta name="_csrf_param" th:content="${_csrf != null ? _csrf.parameterName : '_csrf'}" content="_csrf">
+
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" th:href="@{/images/favicon.svg}" href="/images/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/favicon-32x32.png}" href="/images/favicon-32x32.png">
