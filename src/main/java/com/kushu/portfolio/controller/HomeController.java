@@ -42,6 +42,16 @@ public class HomeController {
     }
 
     /**
+     * Renders the Thank You / Connection Success page.
+     */
+    @GetMapping("/thank-you")
+    public String thankYou(Model model) {
+        ProfileData profile = portfolioService.getProfileData();
+        model.addAttribute("profile", profile);
+        return "thank-you";
+    }
+
+    /**
      * API endpoint for incoming contact messages.
      * Sanitizes all fields prior to storage to guarantee security.
      */

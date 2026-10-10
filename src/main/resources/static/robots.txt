@@ -1,0 +1,11 @@
+# Robots.txt for Khushi Singh's Portfolio
+# https://khushisingh.github.io/portfolio/
+
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://khushisingh.github.io/portfolio/sitemap.xml

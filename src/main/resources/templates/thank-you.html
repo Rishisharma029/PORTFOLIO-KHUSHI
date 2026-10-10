@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Thank You — ' + ${profile.name}">Thank You — Khushi Singh</title>
+    <meta name="description" content="Thank you for visiting Khushi Singh's Java Full Stack Developer portfolio.">
+    <meta name="theme-color" content="#0e0417">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" th:href="@{/images/favicon.svg}" href="./images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/favicon-32x32.png}" href="./images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/images/apple-touch-icon.png}" href="./images/apple-touch-icon.png">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" href="./favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="./css/style.css">
+</head>
+<body class="thankyou-page-body">
+
+    <!-- Ambient Sparkles -->
+    <div class="sparkle sp-left" aria-hidden="true" style="top: 15%; left: 8%;">✦</div>
+    <div class="sparkle sp-right" aria-hidden="true" style="top: 25%; right: 10%;">✦</div>
+    <div class="sparkle sp-far-right" aria-hidden="true" style="bottom: 18%; left: 12%;">✦</div>
+
+    <main class="thankyou-page-wrapper">
+        <div class="thankyou-card-container">
+            
+            <!-- Glowing Icon Aura -->
+            <div class="thankyou-icon-aura" aria-hidden="true">
+                <svg class="thankyou-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </div>
+
+            <!-- Category Badge -->
+            <div class="thankyou-badge-wrap">
+                <span>✦</span>
+                <span>Connection Established</span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h1 class="thankyou-title">
+                Thank You for <span>Reaching Out!</span>
+            </h1>
+            <p class="thankyou-description">
+                Your message has been received with appreciation. I look forward to connecting and discussing software engineering opportunities and collaborations.
+            </p>
+
+            <!-- Responsive Highlight Cards -->
+            <div class="thankyou-highlight-grid">
+                <div class="thankyou-highlight-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Prompt Response</span>
+                    </h4>
+                    <p>I actively monitor incoming messages and will get back to you within 24–48 hours.</p>
+                </div>
+
+                <div class="thankyou-highlight-card">
+                    <h4>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <span>Open for Roles</span>
+                    </h4>
+                    <p>Seeking Java Full Stack internships, junior engineering roles, and innovative project collabs.</p>
+                </div>
+            </div>
+
+            <!-- Handwritten Mantra Block -->
+            <div class="thankyou-quote-block">
+                <p class="thankyou-quote-text">
+                    “Every great collaboration begins with a single hello.” 💜
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="thankyou-action-buttons">
+                <a th:href="@{/}" href="./index.html" class="thankyou-btn-primary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Back to Portfolio</span>
+                </a>
+
+                <a th:href="${profile != null ? profile.linkedinUrl : 'https://www.linkedin.com/in/khushi-singh-0a9a9738a/'}"
+                   href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="thankyou-btn-secondary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>Connect on LinkedIn</span>
+                </a>
+
+                <a th:href="@{/#projects}" href="./index.html#projects" class="thankyou-btn-secondary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>Explore Projects</span>
+                </a>
+            </div>
+
+            <!-- Footer Branding -->
+            <div class="thankyou-footer-brand">
+                <span>✦ Portfolio of </span>
+                <strong th:text="${profile != null ? profile.name : 'Khushi Singh'}">Khushi Singh</strong>
+                <span> • <span th:text="${profile != null ? profile.preferredTitle : 'Java Full Stack Developer'}">Java Full Stack Developer</span></span>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

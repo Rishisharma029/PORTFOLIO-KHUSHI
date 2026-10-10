@@ -68,4 +68,15 @@ class HomeControllerTest {
         org.junit.jupiter.api.Assertions.assertFalse(stored.getName().contains("<script>"));
         org.junit.jupiter.api.Assertions.assertTrue(stored.getName().contains("&lt;script&gt;"));
     }
+
+    @Test
+    void shouldRenderThankYouPage() throws Exception {
+        mockMvc.perform(get("/thank-you"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("thank-you"))
+                .andExpect(model().attributeExists("profile"))
+                .andExpect(content().string(containsString("Thank You")))
+                .andExpect(content().string(containsString("Connection Established")))
+                .andExpect(content().string(containsString("Back to Portfolio")));
+    }
 }

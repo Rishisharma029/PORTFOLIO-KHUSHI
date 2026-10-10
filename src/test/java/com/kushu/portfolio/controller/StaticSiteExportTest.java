@@ -62,7 +62,20 @@ public class StaticSiteExportTest {
                          .replace("href=\"/favicon.ico\"", "href=\"./favicon.ico\"");
         Files.writeString(distDir.resolve("404.html"), html404);
 
-        // Copy static resources (css, js, images, favicon.ico)
+        // Render and write thank-you.html for GitHub Pages
+        MvcResult resultThankYou = mockMvc.perform(get("/thank-you"))
+                .andExpect(status().isOk())
+                .andReturn();
+        String htmlThankYou = resultThankYou.getResponse().getContentAsString();
+        htmlThankYou = htmlThankYou.replace("href=\"/css/", "href=\"./css/")
+                                   .replace("src=\"/js/", "src=\"./js/")
+                                   .replace("src=\"/images/", "src=\"./images/")
+                                   .replace("href=\"/images/", "href=\"./images/")
+                                   .replace("content=\"/images/", "content=\"./images/")
+                                   .replace("href=\"/favicon.ico\"", "href=\"./favicon.ico\"");
+        Files.writeString(distDir.resolve("thank-you.html"), htmlThankYou);
+
+        // Copy static resources (css, js, images, robots.txt, sitemap.xml, favicon.ico)
         Path staticDir = Paths.get("src/main/resources/static");
         if (Files.exists(staticDir)) {
             Files.walkFileTree(staticDir, new SimpleFileVisitor<Path>() {
