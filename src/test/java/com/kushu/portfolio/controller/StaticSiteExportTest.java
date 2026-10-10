@@ -1,5 +1,6 @@
 package com.kushu.portfolio.controller;
 
+import com.kushu.portfolio.service.ContactMessageRepository;
 import com.kushu.portfolio.service.PortfolioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(HomeController.class)
-@Import(PortfolioService.class)
+@Import({PortfolioService.class, ContactMessageRepository.class})
 public class StaticSiteExportTest {
 
     @Autowired
