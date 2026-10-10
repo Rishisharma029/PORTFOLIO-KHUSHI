@@ -66,18 +66,24 @@ To take full ownership and make this repository appear under your personal GitHu
 
 ## 🌐 How to Deploy Your Portfolio Live on the Internet (Free)
 
-When you're ready to share your portfolio link with recruiters and friends, you can host it online for free using any of these services:
+We have pre-configured **automatic GitHub Pages deployment** using GitHub Actions! You don't need to create accounts on third-party hosting services.
 
-### Option A: Render (Recommended & Very Simple)
-1. Sign up at [Render.com](https://render.com) using your GitHub account.
-2. Click **New +** -> **Web Service**.
-3. Select your GitHub repository.
-4. Choose **Java** environment.
-5. Set Build Command: `./mvnw clean package -DskipTests`
-6. Set Start Command: `java -jar target/kushu-portfolio-0.0.1-SNAPSHOT.jar`
-7. Click **Deploy**! Render will give you a free URL like `https://khushi-portfolio.onrender.com`.
+### 🌟 Option A: GitHub Pages (Automatic & 100% Free Forever)
+Whenever you push your code or edit `portfolio-data.json` on GitHub, our automated workflow compiles the site and publishes it to GitHub Pages automatically.
 
-### Option B: Railway.app
+1. On your GitHub repository page, click **Settings** (top right tab).
+2. On the left sidebar, click **Pages**.
+3. Under **Build and deployment** -> **Source**, select:
+   👉 **GitHub Actions**
+4. That's it! Every time you `git push` to `main`, GitHub will automatically build your portfolio and host it at:
+   👉 `https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME/`
+
+---
+
+### Option B: Render or Railway (If you want a live Spring Boot backend server)
+If you later add dynamic server features (like a live MySQL database or custom backend REST APIs):
+- **Render.com**: Connect your GitHub repo, select Java, Build: `./mvnw clean package -DskipTests`, Run: `java -jar target/kushu-portfolio-0.0.1-SNAPSHOT.jar`.
+- **Railway.app**: Connect your GitHub repo and click deploy.
 1. Sign up at [Railway.app](https://railway.app) with GitHub.
 2. Click **New Project** -> **Deploy from GitHub repo**.
 3. Railway automatically detects Spring Boot and deploys it in under 2 minutes.

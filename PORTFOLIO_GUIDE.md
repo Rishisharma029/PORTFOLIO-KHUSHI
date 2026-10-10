@@ -138,13 +138,15 @@ http://localhost:8080
 
 ---
 
-## 🌐 Social Sharing Preview & Favicons
+## 🚀 1-Click Free Deployment with GitHub Pages
 
-When you share your portfolio link on **LinkedIn, WhatsApp, Twitter/X, Telegram, Discord, or iMessage**, it automatically displays a custom-designed link card and icon.
+This portfolio includes an **automated GitHub Actions workflow** (`.github/workflows/deploy.yml`):
 
-- **Preview Image:** Located at `src/main/resources/static/images/og-preview.png` (1200x630px high-resolution banner featuring your portrait, title, and tech stack).
-- **Custom Favicon:** Located at `src/main/resources/static/images/favicon.svg` and `src/main/resources/static/favicon.ico`.
-- **Meta Title & Description:** Defined dynamically using your `name`, `preferredTitle`, and `subtitle` in `portfolio-data.json`.
+1. Go to your GitHub repository -> **Settings** -> **Pages**.
+2. Under **Build and deployment > Source**, choose **GitHub Actions**.
+3. Every time you push changes to `portfolio-data.json`, GitHub automatically deploys your live site at:
+   `https://<your-username>.github.io/<repo-name>/`
+4. Want to export static HTML files locally? Just run `.\export-static.bat` (or `./export-static.sh` on Mac/Linux) and check the `./dist` folder!
 
 ---
 

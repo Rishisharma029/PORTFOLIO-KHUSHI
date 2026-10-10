@@ -23,8 +23,9 @@
 hs_err_pid*
 replay_pid*
 
-# Maven
+# Maven & Build Exports
 target/
+dist/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
