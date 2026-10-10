@@ -15,8 +15,10 @@
   <b>“Turning ideas into meaningful projects through code.”</b>
 </p>
 
-[👋 Handover & Welcome Guide](./WELCOME_KHUSHI.md) •
+[✨ Welcome Khushi!](./WELCOME.md) •
+[👋 Handover & Quick Start](./WELCOME_KHUSHI.md) •
 [✏️ How to Edit Content](./PORTFOLIO_GUIDE.md) •
+[🛡️ Security Architecture](./SECURITY.md) •
 [🚀 Quick Start](#-how-to-run-locally) •
 [✨ Overview](#-overview) •
 [🏛️ System Architecture](#-system-architecture) •
@@ -26,7 +28,7 @@
 ---
 
 > [!TIP]
-> **Hey Khushi! 💜** Welcome to your personal developer portfolio codebase. You have 100% full ownership of this project. Check out the **[WELCOME_KHUSHI.md](./WELCOME_KHUSHI.md)** for a beginner-friendly guide to running, editing, and publishing your portfolio.
+> **Hey Khushi! 💜** Welcome to your personal developer portfolio codebase. You have 100% full ownership of this project. Check out **[WELCOME.md](./WELCOME.md)** and **[WELCOME_KHUSHI.md](./WELCOME_KHUSHI.md)** for inspirational guidance and beginner-friendly instructions on running, editing, and publishing your portfolio.
 
 ---
 
