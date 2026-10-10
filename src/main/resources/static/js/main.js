@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initContentProtection();
     initNavigation();
     initProjectTabs();
     initProjectModal();
@@ -540,6 +541,66 @@ function initThankYouModal() {
         }
     });
 }
+
+/**
+ * Content Protection System
+ * Disables right click (context menu), text selection, dragging, and copy/inspect shortcuts.
+ */
+function initContentProtection() {
+    // 1. Disable Right-Click Context Menu
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 2. Disable Text & Element Selection Start
+    document.addEventListener('selectstart', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 3. Disable Dragging (Images, Links, Cards)
+    document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 4. Disable Direct Copy & Cut
+    document.addEventListener('copy', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    document.addEventListener('cut', (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // 5. Disable Common Copy & Inspect Shortcuts
+    document.addEventListener('keydown', (e) => {
+        const key = e.key.toLowerCase();
+        const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+
+        // Prevent Ctrl+A (Select All), Ctrl+C (Copy), Ctrl+X (Cut), Ctrl+U (View Source), Ctrl+S (Save), Ctrl+P (Print)
+        if (isCtrlOrCmd && ['a', 'c', 'x', 'u', 's', 'p'].includes(key)) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Prevent F12 (DevTools)
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+
+        // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (DevTools inspect)
+        if (isCtrlOrCmd && e.shiftKey && ['i', 'j', 'c'].includes(key)) {
+            e.preventDefault();
+            return false;
+        }
+    });
+}
+
 
 
 
