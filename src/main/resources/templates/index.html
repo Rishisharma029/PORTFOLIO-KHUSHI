@@ -755,7 +755,88 @@
 
 
         <!-- ========================================================================= -->
-        <!-- 8. FOOTER                                                                 -->
+        <!-- 8. SECTION ROW: Thank You & Gratitude Card                                -->
+        <!-- ========================================================================= -->
+        <div class="bento-row bento-row-full" id="thankYouSectionRow">
+
+            <!-- Card: Thank You & Gratitude -->
+            <section class="bento-card card-thankyou" id="thankyou" aria-labelledby="headingThankYou">
+                <div class="thankyou-card-inner">
+                    <!-- Glowing Icon Aura -->
+                    <div class="thankyou-icon-aura" aria-hidden="true">
+                        <svg class="thankyou-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Category Badge -->
+                    <div class="thankyou-badge-wrap">
+                        <span>✦</span>
+                        <span>Connection &amp; Appreciation</span>
+                    </div>
+
+                    <!-- Title & Subtitle -->
+                    <h2 class="thankyou-title" id="headingThankYou">
+                        Thank You for <span>Visiting &amp; Connecting!</span>
+                    </h2>
+                    <p class="thankyou-description">
+                        Thank you for taking the time to explore my portfolio and engineering journey. I'm actively seeking opportunities to build scalable solutions, collaborate with great teams, and grow as a software engineer.
+                    </p>
+
+                    <!-- Responsive Highlight Cards -->
+                    <div class="thankyou-highlight-grid">
+                        <div class="thankyou-highlight-card">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <span>Prompt Response</span>
+                            </h4>
+                            <p>I actively monitor incoming messages and will get back to you within 24–48 hours.</p>
+                        </div>
+
+                        <div class="thankyou-highlight-card">
+                            <h4>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                                <span>Open for Roles</span>
+                            </h4>
+                            <p>Seeking Java Full Stack internships, junior engineering roles, and innovative project collabs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Handwritten Mantra Block -->
+                    <div class="thankyou-quote-block">
+                        <p class="thankyou-quote-text">
+                            “Every great collaboration begins with a single hello.” 💜
+                        </p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="thankyou-action-buttons">
+                        <a th:href="${profile != null ? profile.linkedinUrl : 'https://www.linkedin.com/in/khushi-singh-0a9a9738a/'}"
+                           href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="thankyou-btn-primary">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <span>Connect on LinkedIn</span>
+                        </a>
+
+                        <a href="#home" class="thankyou-btn-secondary">
+                            <span>Back to Top ↑</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 9. FOOTER                                                                 -->
         <!-- ========================================================================= -->
         <footer class="portfolio-footer">
             <div class="footer-inner">
