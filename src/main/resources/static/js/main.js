@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectTabs();
     initProjectModal();
     initCertModal();
+    initThankYouModal();
     initShareButton();
     initResumeButton();
     initEasterEgg();
@@ -491,5 +492,54 @@ function initEasterEgg() {
         }
     });
 }
+
+/**
+ * Interactive Thank You / Connection Modal Dialog
+ */
+function initThankYouModal() {
+    const triggerBtn = document.getElementById('contactSendMsgBtn');
+    const thankYouModal = document.getElementById('thankYouModal');
+    const closeBtn = document.getElementById('thankYouModalCloseBtn');
+    const closeActionBtn = document.getElementById('thankYouModalCloseActionBtn');
+
+    if (!thankYouModal) return;
+
+    function openThankYouModal() {
+        thankYouModal.classList.add('open');
+        thankYouModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeThankYouModal() {
+        thankYouModal.classList.remove('open');
+        thankYouModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (triggerBtn) {
+        triggerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openThankYouModal();
+        });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeThankYouModal);
+    if (closeActionBtn) closeActionBtn.addEventListener('click', closeThankYouModal);
+
+    // Click outside modal container (on backdrop)
+    thankYouModal.addEventListener('click', (e) => {
+        if (e.target === thankYouModal) {
+            closeThankYouModal();
+        }
+    });
+
+    // Escape key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && thankYouModal.classList.contains('open')) {
+            closeThankYouModal();
+        }
+    });
+}
+
 
 
