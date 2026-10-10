@@ -1,0 +1,531 @@
+{
+  "name": "Khushi Singh",
+  "preferredTitle": "Java Full Stack Developer",
+  "subtitle": "BCA Student | Aspiring Java Full Stack Developer",
+  "tagline": "Learning · Building · Growing",
+  "supportingLine": "Learning, building, and growing through code.",
+  "quote": "Turning ideas into meaningful projects through code.",
+  "location": "Faridabad, Haryana, India",
+  "linkedinUrl": "https://www.linkedin.com/in/khushi-singh-0a9a9738a/",
+  "githubUrl": null,
+  "email": null,
+  "portraitPath": "/images/khushi-portrait.jpg",
+  "bio": "I am a BCA student with a strong interest in software development and programming. I am currently working towards becoming a Java Full Stack Developer.\n\nI have learned the basics of Java, Python, and C, and I am currently developing my skills in web development, databases, Git/GitHub, and full-stack technologies.\n\nI enjoy coding and building practical projects that solve real-world problems. I am continuously learning new technologies and looking for opportunities to improve my technical and problem-solving skills.",
+  
+  "education": {
+    "institution": "Satyug Darshan Institute of Engineering & Technology",
+    "degree": "Bachelor of Computer Applications (BCA)",
+    "period": "Aug 2025 - Jun 2028",
+    "activities": "Activities and societies: Coding, college projects, technical presentations, hackathons, and technology-related learning activities.",
+    "logoSvg": "sdiet-crest"
+  },
+
+  "learningJourney": [
+    {
+      "year": "2025",
+      "title": "Started Coding & Web Basics",
+      "description": "Began journey in computer science, learning foundational programming concepts, HTML5, CSS3, and JavaScript.",
+      "tag": "FOUNDATIONS",
+      "dotColor": "white",
+      "draft": false,
+      "reviewNote": null
+    },
+    {
+      "year": "2025",
+      "title": "Completed 12th Grade",
+      "description": "Graduated senior secondary education (CBSE Board) with focus on science and computers, choosing to pursue BCA for software development.",
+      "tag": "ACADEMIC",
+      "dotColor": "white",
+      "draft": false,
+      "reviewNote": null
+    },
+    {
+      "year": "2025",
+      "title": "Enrolled in BCA at SDIET",
+      "description": "Enrolled in Bachelor of Computer Applications (BCA) at Satyug Darshan Institute of Engineering & Technology (SDIET), focusing on computer science, core programming, and algorithms.",
+      "tag": "EDUCATION",
+      "dotColor": "white",
+      "draft": false,
+      "reviewNote": null
+    },
+    {
+      "year": "2026",
+      "title": "Core Java & OOP Specialization",
+      "description": "Deepened knowledge in Core Java 21, Object-Oriented Programming (OOP), Collections, Multithreading, and Exception Handling through coursework and LetsUpgrade bootcamp certification.",
+      "tag": "CORE SKILL",
+      "dotColor": "emerald",
+      "draft": false,
+      "reviewNote": null
+    },
+    {
+      "year": "2026",
+      "title": "Java Full Stack Developer Portfolio",
+      "description": "Designed and engineered personal developer portfolio application using Java 21, Spring Boot 3.3 MVC, Thymeleaf, and responsive design tokens.",
+      "tag": "PERSONAL PROJECT",
+      "dotColor": "emerald",
+      "draft": false,
+      "reviewNote": null
+    },
+    {
+      "year": "2026",
+      "title": "CampusOS AI (Collaborative Contribution)",
+      "description": "Contributed to student portal frontend UI and gatepass workflow integration within the collaborative campus platform led by developer Rishi Sharma.",
+      "tag": "COLLAB CONTRIBUTION",
+      "dotColor": "blue",
+      "draft": false,
+      "reviewNote": "Collaborative contribution to team repository (Lead: Rishi Sharma). Not Khushi's independent work."
+    },
+    {
+      "year": "2026",
+      "title": "EvalSync System (Collaborative Contribution)",
+      "description": "Contributed to teacher evaluation workflow forms and mark tabulation logic for the academic grading platform led by developer Rishi Sharma.",
+      "tag": "COLLAB CONTRIBUTION",
+      "dotColor": "blue",
+      "draft": false,
+      "reviewNote": "Collaborative contribution to team repository (Lead: Rishi Sharma). Not Khushi's independent work."
+    },
+    {
+      "year": "2026",
+      "title": "Handwritten Digital Recognition (Collaborative Contribution)",
+      "description": "Assisted with image dataset preprocessing and validation testing for the handwritten OCR digitizer project led by developer Rishi Sharma.",
+      "tag": "COLLAB CONTRIBUTION",
+      "dotColor": "blue",
+      "draft": false,
+      "reviewNote": "Collaborative contribution to team repository (Lead: Rishi Sharma). Invented ResNet/CTC claims removed."
+    },
+    {
+      "year": "Draft",
+      "title": "Distributed Systems / Traffic Management Concept",
+      "description": "Exploratory study into networking and backend traffic distribution concepts. (Removed unverified L4/L7 production claims).",
+      "tag": "DRAFT — OWNER REVIEW",
+      "dotColor": "amber",
+      "draft": true,
+      "reviewNote": "⚠️ Draft Milestone: Requires owner review and verification of actual learning scope before publishing."
+    },
+    {
+      "year": "Draft",
+      "title": "System Architecture Visualizer Concept",
+      "description": "Exploratory study into cloud architecture and automated diagram tooling.",
+      "tag": "DRAFT — OWNER REVIEW",
+      "dotColor": "amber",
+      "draft": true,
+      "reviewNote": "⚠️ Draft Milestone: Unconfirmed entry marked as draft for owner review."
+    },
+    {
+      "year": "Draft",
+      "title": "Developer Code Inspection Tool Concept",
+      "description": "Exploratory study into static analysis, linter patterns, and developer productivity tooling.",
+      "tag": "DRAFT — OWNER REVIEW",
+      "dotColor": "amber",
+      "draft": true,
+      "reviewNote": "⚠️ Draft Milestone: Unconfirmed entry marked as draft for owner review."
+    },
+    {
+      "year": "Draft",
+      "title": "AI Resume Analysis Concept",
+      "description": "Exploratory project concept for automated resume critique and scoring.",
+      "tag": "DRAFT — OWNER REVIEW",
+      "dotColor": "amber",
+      "draft": true,
+      "reviewNote": "⚠️ Draft Milestone: Unconfirmed entry marked as draft for owner review."
+    }
+  ],
+
+  "skillCategories": [
+    {
+      "name": "Programming Languages & Core",
+      "skills": [
+        {
+          "name": "Java (Core & OOP)",
+          "iconType": "java",
+          "badgeColor": "#f89820"
+        },
+        {
+          "name": "Python",
+          "iconType": "python",
+          "badgeColor": "#3776ab"
+        },
+        {
+          "name": "C Programming",
+          "iconType": "c",
+          "badgeColor": "#00599c"
+        },
+        {
+          "name": "SQL & Databases",
+          "iconType": "database",
+          "badgeColor": "#336791"
+        }
+      ]
+    },
+    {
+      "name": "Web & Backend Development",
+      "skills": [
+        {
+          "name": "Spring Boot & MVC",
+          "iconType": "spring",
+          "badgeColor": "#6db33f"
+        },
+        {
+          "name": "HTML5 & CSS3",
+          "iconType": "html",
+          "badgeColor": "#e34f26"
+        },
+        {
+          "name": "JavaScript",
+          "iconType": "javascript",
+          "badgeColor": "#f7df1e"
+        },
+        {
+          "name": "Git & GitHub",
+          "iconType": "git",
+          "badgeColor": "#f05032"
+        }
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "id": "cert-ibm-ai",
+      "title": "Getting Started with Artificial Intelligence",
+      "issuer": "IBM SkillsBuild",
+      "date": "Sep 2026",
+      "credentialId": null,
+      "logoType": "ibm",
+      "certUrl": "https://skillsbuild.org/",
+      "description": "Foundations of Artificial Intelligence, Machine Learning fundamentals, ethical AI principles, neural networks, and modern prompt engineering practices.",
+      "skills": "Artificial Intelligence • Machine Learning • Neural Networks • Prompt Engineering"
+    },
+    {
+      "id": "cert-java-bootcamp",
+      "title": "Java Bootcamp",
+      "issuer": "LetsUpgrade",
+      "date": "Apr 2026",
+      "credentialId": "LUEJAVAMAR12641",
+      "logoType": "letsupgrade",
+      "certUrl": "https://letsupgrade.in/verify?id=LUEJAVAMAR12641",
+      "description": "Comprehensive hands-on training covering Core Java, Object-Oriented Design, Collections Framework, Multithreading, Exception Handling, and building modular Java applications.",
+      "skills": "Java 21 • Object-Oriented Programming (OOP) • Collections • Multithreading"
+    },
+    {
+      "id": "cert-python-bootcamp",
+      "title": "Python Bootcamp",
+      "issuer": "LetsUpgrade",
+      "date": "Apr 2026",
+      "credentialId": "LUEPYTAPR12681",
+      "logoType": "letsupgrade",
+      "certUrl": "https://letsupgrade.in/verify?id=LUEPYTAPR12681",
+      "description": "Intensive training in Python scripting, functional programming, data manipulation, file handling, and REST microservices development.",
+      "skills": "Python 3 • Scripting • Data Structures • Backend Automation"
+    },
+    {
+      "id": "cert-design-matrix",
+      "title": "Design Matrix",
+      "issuer": "Satyug Darshan Institute of Engg. & Tech.",
+      "date": "Jan 2026",
+      "credentialId": "SDIET-DM-2026-KS",
+      "logoType": "sdiet",
+      "certUrl": "https://satyug.edu.in/",
+      "description": "Inter-college design and technological innovation workshop focusing on modern UI/UX design systems, user journey mapping, wireframing, and component hierarchy.",
+      "skills": "UI/UX Design • Design Systems • Wireframing • User Centered Design"
+    },
+    {
+      "id": "cert-german-1",
+      "title": "German-1",
+      "issuer": "NPTEL",
+      "date": "Apr 2026",
+      "credentialId": "NPTEL26HS78S254602701",
+      "logoType": "nptel",
+      "certUrl": "https://nptel.ac.in/noc/",
+      "description": "Introductory German Language and Cultural Competency certification covering German grammar, vocabulary, conversational skills, and technical communication.",
+      "skills": "German A1 • Technical Communication • Cross-cultural Collaboration"
+    },
+    {
+      "id": "cert-ai-tools",
+      "title": "AI Tools Workshop",
+      "issuer": "United Latino Students Association",
+      "date": "Feb 2026",
+      "credentialId": "0270772f-3809-4400-b29b-1e1c61cd09971081964",
+      "logoType": "ulsa",
+      "certUrl": "https://www.unitedlatinos.org/",
+      "description": "Applied AI tools workshop focusing on modern generative AI tooling, developer productivity workflows, API integrations, and practical prompt architecture.",
+      "skills": "Generative AI • AI Developer Tools • Workflow Automation • LLM APIs"
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "proj-portfolio",
+      "title": "Khushi Singh — Official Developer Portfolio",
+      "description": "Robust server-rendered web application architecture built with Java 21, Spring Boot, MVC patterns, and custom responsive design tokens.",
+      "fullDescription": "Designed and built a high-performance personal developer portfolio website using Spring Boot 3.3.4 and Thymeleaf 3.x. Features a customized 100vh hero layout, interactive alternating timeline for her learning journey, dynamic project modals, and automated JUnit test verification without third-party heavy JS frameworks.",
+      "techStack": "Java 21 • Spring Boot 3.3.4 • Thymeleaf • HTML5/CSS3 • Maven",
+      "category": "PERSONAL",
+      "role": "Lead Developer & Architect",
+      "contribution": "Architected the entire backend application, engineered the Spring MVC controllers and service layer, handcrafted custom dark plum glassmorphism UI styles, and automated continuous test suites.",
+      "githubUrl": null,
+      "liveUrl": "http://localhost:8080",
+      "previewImage": "/images/khushi-photo-crop.jpg",
+      "comingSoon": false,
+      "highlights": [
+        "Java 21 & Spring Boot 3.3.4 MVC backend",
+        "Thymeleaf 3 server-side HTML rendering",
+        "Custom plum & radiant violet bento design tokens",
+        "Zero bloated client frameworks — 100% clean vanilla JS"
+      ]
+    },
+    {
+      "id": "proj-java-oop",
+      "title": "Java OOP & Data Structures Suite",
+      "description": "Structured collection of object-oriented architecture patterns, custom collections, and algorithmic problem-solving implementations.",
+      "fullDescription": "A comprehensive exploration of core Java programming paradigms: abstract factory architectures, inheritance hierarchies, custom generic data structures, search & sorting algorithms, and multi-threaded file processors.",
+      "techStack": "Java 21 • OOP Architecture • Data Structures • Collections",
+      "category": "PERSONAL",
+      "role": "Independent Developer",
+      "contribution": "Authored clean, documented Java classes modeling real-world domain objects, unit-tested core algorithms, and implemented custom exception handlers.",
+      "githubUrl": null,
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Encapsulation, Polymorphism & Abstraction patterns",
+        "Custom generic Collections & Map implementations",
+        "Algorithmic sorting & graph traversal benchmarks",
+        "JUnit 5 test coverage for core logic"
+      ]
+    },
+    {
+      "id": "proj-campusos",
+      "title": "CampusOS AI",
+      "description": "AI-powered university operating system covering campus operations, administration, student analytics, and AI assistants.",
+      "fullDescription": "Comprehensive campus governance portal managing real-time student profiling, automated gatepass approval workflows, attendance tracking, and AI-driven administrative helpdesks.",
+      "techStack": "React • TypeScript • FastAPI • Tailwind CSS",
+      "category": "COLLAB",
+      "role": "Frontend & Service Integration Contributor",
+      "contribution": "Collaborated on student dashboard UI components, gatepass request state machines, and FastAPI backend integration endpoints in the team repository led by developer Rishi Sharma.",
+      "githubUrl": "https://github.com/Rishisharma029/campusOS",
+      "liveUrl": "https://github.com/Rishisharma029/campusOS",
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Real-time student profiling & attendance trackers",
+        "Automated digital gatepass generation & approval",
+        "FastAPI microservices integration",
+        "Responsive role-based access control UI"
+      ]
+    },
+    {
+      "id": "proj-careergraph",
+      "title": "CareerGraph AI",
+      "description": "Transforms career documents into an interactive knowledge graph, career timeline, AI search experience, and resume insights.",
+      "fullDescription": "An intelligent career analysis platform that ingests unstructured resumes and portfolios, parsing skills and milestones into an interactive D3/knowledge graph visualization with semantic RAG search.",
+      "techStack": "React • TypeScript • AI/RAG • Knowledge Graph",
+      "category": "COLLAB",
+      "role": "Knowledge Graph UI & Timeline Contributor",
+      "contribution": "Contributed to the interactive career timeline visualizer, skill graph node layouts, and testing semantic search response accuracy in collaboration with lead developer Rishi Sharma.",
+      "githubUrl": "https://github.com/Rishisharma029/careergraph-ai",
+      "liveUrl": "https://rishisharma029.github.io/careergraph-ai/",
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Dynamic graph visualization of skills & career history",
+        "Semantic retrieval-augmented generation (RAG) query engine",
+        "Interactive timeline milestone explorer",
+        "Actionable resume scoring & gap analysis"
+      ]
+    },
+    {
+      "id": "proj-ocr",
+      "title": "Handwritten Digital Recognition System",
+      "description": "An OCR platform for converting handwritten notes and documents into editable, searchable digital text.",
+      "fullDescription": "End-to-end computer vision and OCR pipeline combining text bounding-box detection with character recognition models to digitize handwritten student notes and exams.",
+      "techStack": "Python • FastAPI • React • TrOCR • EasyOCR",
+      "category": "COLLAB",
+      "role": "ML Data Preprocessing & Validation Contributor",
+      "contribution": "Assisted in dataset preprocessing, image normalization pipelines, bounding-box accuracy evaluation, and frontend upload flow testing for the team project led by developer Rishi Sharma.",
+      "githubUrl": "https://github.com/Rishisharma029/handwritten-digital-recognition-system",
+      "liveUrl": "https://rishisharma029.github.io/handwritten-digital-recognition-system/",
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Multi-engine OCR pipeline with transformer models",
+        "FastAPI asynchronous batch image inference",
+        "Interactive side-by-side text editor & PDF exporter",
+        "High-accuracy handwriting transcription benchmark"
+      ]
+    },
+    {
+      "id": "proj-evalsync",
+      "title": "EvalSync-System",
+      "description": "Academic evaluation and CBSE paper-checking platform with grading workflows, analytics, and student records.",
+      "fullDescription": "Secure, synchronized evaluation ecosystem designed for educational institutions to coordinate multi-evaluator paper checking, mark tabulation, grade sheet exports, and discrepancy flags.",
+      "techStack": "React • Node.js • Express • MongoDB",
+      "category": "COLLAB",
+      "role": "Full Stack Workflow Contributor",
+      "contribution": "Contributed to teacher evaluation workflow forms, mark tallying calculations, student record schemas in MongoDB, and PDF report generation for the collaborative platform led by developer Rishi Sharma.",
+      "githubUrl": "https://github.com/Rishisharma029/EvalSync-System",
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Role-based grading dashboards for teachers & head evaluators",
+        "Automated marksheet aggregation and discrepancy alert system",
+        "MongoDB flexible schema for dynamic subject criteria",
+        "Exportable audit logs & CBSE compliance tracking"
+      ]
+    },
+    {
+      "id": "proj-resqnet",
+      "title": "ResQNet",
+      "description": "Emergency-response platform for incident management, volunteer dispatch, GIS mapping, and shelter tracking.",
+      "fullDescription": "Real-time disaster management dispatch network facilitating emergency SOS broadcasts, automated nearest-responder routing, live GIS hazard overlays, and shelter capacity monitoring.",
+      "techStack": "React • Node.js • GIS • Socket.IO",
+      "category": "COLLAB",
+      "role": "GIS Mapping & Realtime Dispatch Contributor",
+      "contribution": "Contributed to incident logging forms, Mapbox GIS layer overlays, live volunteer beacon tracking, and Socket.IO broadcast handlers for the team platform led by developer Rishi Sharma.",
+      "githubUrl": "https://github.com/Rishisharma029/resqnet",
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Live bidirectional SOS alerting via WebSockets",
+        "Geospatial hazard mapping with safe shelter radii",
+        "Volunteer dispatch coordination & status dashboard",
+        "Offline-first incident caching and sync"
+      ]
+    },
+    {
+      "id": "proj-teachercheck",
+      "title": "Teacher-Check",
+      "description": "Foundational-learning assessment and academic checking project.",
+      "fullDescription": "Educational monitoring platform enabling standardized assessment checking, learning progress rubrics, and diagnostic teacher feedback.",
+      "techStack": "Python • Flask • React • EdTech",
+      "category": "COLLAB",
+      "role": "Academic Assessment Platform Contributor",
+      "contribution": "Contributed to assessment rubric scoring forms, student benchmark metrics, and automated reporting views.",
+      "githubUrl": "https://github.com/Rishisharma029/teacher-check",
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Standardized rubric scoring logic",
+        "Classroom analytics dashboard",
+        "Student milestone mastery charts"
+      ]
+    },
+    {
+      "id": "proj-bhoomilens",
+      "title": "BhoomiLens",
+      "description": "Land analysis, geospatial satellite & imagery exploration platform.",
+      "fullDescription": "Geospatial satellite imagery processing interface for agricultural boundary mapping, land cover classification, and terrain change detection.",
+      "techStack": "Geospatial GIS • Python • Satellite Data",
+      "category": "COLLAB",
+      "role": "Geospatial Interface Contributor",
+      "contribution": "Assisted in satellite image layer controls, polygon selection tools, and UI visualization for terrain classification.",
+      "githubUrl": "https://github.com/Rishisharma029/bhoomilens",
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Multispectral satellite layer rendering",
+        "Polygon demarcation and area calculation",
+        "Land classification visual explorer"
+      ]
+    },
+    {
+      "id": "proj-aiworkshop",
+      "title": "AI Engineering Workshop",
+      "description": "AI engineering workshop repository covering LLMs, generative agents, and practical AI implementations.",
+      "fullDescription": "Collection of hands-on experimental implementations exploring prompt engineering frameworks, autonomous LLM tool-calling agents, and vector embeddings.",
+      "techStack": "Python • AI / ML • LLMs",
+      "category": "COLLAB",
+      "role": "Workshop Researcher & Contributor",
+      "contribution": "Participated in agentic workflow design, tested prompt evaluation benchmarks, and documented LLM reasoning patterns.",
+      "githubUrl": "https://github.com/Rishisharma029/ai-engineering-workshop",
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": false,
+      "highlights": [
+        "Autonomous tool-calling agents implementation",
+        "RAG vector retrieval benchmarks",
+        "Structured JSON output extraction pipelines"
+      ]
+    },
+    {
+      "id": "proj-travia",
+      "title": "TRAVIA",
+      "description": "AI-powered smart tourism ecosystem with travel discovery and location-based features.",
+      "fullDescription": "Smart tourism application providing personalized itinerary recommendations, localized cultural highlights, and multi-city tour planning.",
+      "techStack": "AI • Smart Tourism • React • Maps API",
+      "category": "COLLAB",
+      "role": "Smart Tourism UI Contributor",
+      "contribution": "Collaborated on destination discovery search filters, itinerary timeline builders, and location mapping UI.",
+      "githubUrl": null,
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": true,
+      "highlights": [
+        "AI personalized itinerary generation",
+        "Interactive map route plotting",
+        "Local event & culture curation"
+      ]
+    },
+    {
+      "id": "proj-leafsense",
+      "title": "LeafSense AI",
+      "description": "Crop disease detection using a MobileNetV2-based image classification approach, with symptom analysis and treatment guidance.",
+      "fullDescription": "Edge-compatible mobile plant pathology platform that diagnoses crop leaf diseases from photos and recommends organic or chemical remedies.",
+      "techStack": "MobileNetV2 • Deep Learning • Vision • Python",
+      "category": "COLLAB",
+      "role": "Classification & Dataset Contributor",
+      "contribution": "Participated in leaf disease dataset curation, MobileNetV2 validation testing, and treatment remedy data mapping.",
+      "githubUrl": null,
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": true,
+      "highlights": [
+        "MobileNetV2 lightweight vision model",
+        "Offline crop disease diagnostic classifier",
+        "Actionable treatment and prevention guides"
+      ]
+    },
+    {
+      "id": "proj-solarflare",
+      "title": "SolarFlare-AI",
+      "description": "Solar-flare forecasting research project using solar observations and machine-learning models.",
+      "fullDescription": "Scientific machine-learning research system analyzing solar magnetic field indices to forecast extreme space weather and solar flare eruptions.",
+      "techStack": "Python • ML • Scientific Computing • Pandas",
+      "category": "COLLAB",
+      "role": "Scientific Data Modeling Contributor",
+      "contribution": "Assisted in astronomical time-series dataset cleaning, feature correlation analysis, and model accuracy benchmarking.",
+      "githubUrl": null,
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": true,
+      "highlights": [
+        "Time-series solar magnetogram analysis",
+        "Predictive classification of M/X class flares",
+        "Validation against historical heliophysics observations"
+      ]
+    },
+    {
+      "id": "proj-w3a1",
+      "title": "W3A1",
+      "description": "Blockchain-enabled service marketplace with provider workflows and a self-healing application concept.",
+      "fullDescription": "Decentralized service marketplace leveraging smart contracts for milestone-escrow agreements, decentralized identity, and resilient service discovery.",
+      "techStack": "Web3 • Blockchain • Distributed Systems • React",
+      "category": "COLLAB",
+      "role": "Decentralized Workflow Contributor",
+      "contribution": "Contributed to provider workflow specifications, smart contract interface testing, and frontend wallet interaction views.",
+      "githubUrl": null,
+      "liveUrl": null,
+      "previewImage": null,
+      "comingSoon": true,
+      "highlights": [
+        "Smart-contract escrow payment milestones",
+        "Decentralized service provider registry",
+        "Self-healing distributed application design"
+      ]
+    }
+  ]
+}

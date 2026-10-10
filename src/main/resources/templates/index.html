@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${profile.name} + ' — ' + ${profile.preferredTitle} + ' | Portfolio'">Khushi Singh — Java Full Stack Developer | Portfolio</title>
+    <meta name="description" th:content="${profile.subtitle} + '. ' + ${profile.supportingLine}" content="Official portfolio of Khushi Singh. Exploring Java, Spring Boot, microservices architecture, clean UI, and scalable engineering.">
+    <meta name="keywords" content="Khushi Singh, Java Full Stack Developer, Spring Boot, Java Developer, Microservices, REST APIs, Web Developer, Portfolio, Software Engineer">
+    <meta name="author" th:content="${profile.name}" content="Khushi Singh">
+    <meta name="theme-color" content="#0e0417">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" th:href="@{/images/favicon.svg}" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/favicon-32x32.png}" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon-16x16.png}" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/images/apple-touch-icon.png}" href="/images/apple-touch-icon.png">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" href="/favicon.ico">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp Social Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" th:content="${profile.name} + ' — Portfolio'" content="Khushi Singh — Portfolio">
+    <meta property="og:title" th:content="${profile.name} + ' — ' + ${profile.preferredTitle}" content="Khushi Singh — Java Full Stack Developer">
+    <meta property="og:description" th:content="${profile.subtitle} + '. ' + ${profile.supportingLine}" content="Official portfolio of Khushi Singh. Exploring Java, Spring Boot, microservices architecture, clean UI, and scalable engineering.">
+    <meta property="og:image" th:content="@{/images/og-preview.png}" content="/images/og-preview.png">
+    <meta property="og:image:secure_url" th:content="@{/images/og-preview.png}" content="/images/og-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" th:content="${profile.name} + ' — ' + ${profile.preferredTitle} + ' Portfolio Preview'" content="Khushi Singh — Java Full Stack Developer Portfolio Preview">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" th:content="${profile.name} + ' — ' + ${profile.preferredTitle}" content="Khushi Singh — Java Full Stack Developer">
+    <meta name="twitter:description" th:content="${profile.subtitle} + '. ' + ${profile.supportingLine}" content="Official portfolio of Khushi Singh. Exploring Java, Spring Boot, microservices architecture, clean UI, and scalable engineering.">
+    <meta name="twitter:image" th:content="@{/images/og-preview.png}" content="/images/og-preview.png">
+    <meta name="twitter:image:alt" th:content="${profile.name} + ' Portfolio Preview'" content="Khushi Singh Portfolio Preview">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Outer Fullscreen Page Wrapper -->
+    <div class="portfolio-container">
+
+        <!-- ========================================================================= -->
+        <!-- 1. FULLSCREEN HERO SECTION (100vh Viewport Experience)                    -->
+        <!-- ========================================================================= -->
+        <header class="hero-card fullscreen-hero" id="home">
+            
+            <!-- Sparkles -->
+            <div class="sparkle sp-left" aria-hidden="true">✦</div>
+            <div class="sparkle sp-right" aria-hidden="true">✦</div>
+            <div class="sparkle sp-far-right" aria-hidden="true">✦</div>
+
+            <!-- Top Navigation Bar -->
+            <nav class="hero-navbar" aria-label="Main Navigation">
+                <a href="#home" class="nav-brand" th:text="${profile.name}">Khushi Singh</a>
+                
+                <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <div class="nav-links-wrap" id="navLinksWrap">
+                    <a href="#home" class="nav-item active">Home</a>
+                    <a href="#skills" class="nav-item">Skills</a>
+                    <a href="#projects" class="nav-item">Projects</a>
+                    <a href="#journey" class="nav-item">Journey</a>
+                    <a href="#education" class="nav-item">Education</a>
+                    <a href="#certifications" class="nav-item">Certifications</a>
+                    <a href="#about" class="nav-item">About</a>
+                    <a href="#contact" class="nav-item">Contact</a>
+                </div>
+
+                <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="nav-connect-btn">
+                    <span>Let's Connect</span>
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </nav>
+
+            <!-- Hero 3-Column Symmetrical Content Grid -->
+            <div class="hero-content-grid">
+                
+                <!-- Left Column -->
+                <div class="hero-left-col">
+                    <div class="greeting-pill">
+                        <span class="pill-bar"></span> Hello, I'm
+                    </div>
+
+                    <h1 class="hero-name-heading">
+                        <span class="name-first">Khushi</span>
+                        <span class="name-last">Singh</span>
+                    </h1>
+
+                    <div class="hero-qualifications">
+                        <p class="role-subheading" th:text="${profile.subtitle}">BCA Student | Aspiring Java Full Stack Developer</p>
+                        <p class="skills-subheading">Java | Python | C | Learning Web Development</p>
+                    </div>
+
+                    <p class="hero-bio-summary">
+                        I enjoy coding and building practical projects that solve real-world problems.
+                    </p>
+
+                    <!-- Social Icons Bar -->
+                    <div class="hero-social-row">
+                        <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.92 0-1.67-.75-1.67-1.67s.75-1.67 1.67-1.67 1.67.75 1.67 1.67-.75 1.67-1.67 1.67m1.4 10.18v-8.37H5.06v8.37h2.8z"/>
+                            </svg>
+                        </a>
+                        <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="GitHub Profile" title="GitHub">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="social-circle-btn" aria-label="Email Khushi" title="Email">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <button class="social-circle-btn" id="shareBtn" aria-label="Share Link" title="Copy Portfolio Link">
+                            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Center Column: Prominent Portrait with Purple Halo Glow -->
+                <div class="hero-center-col">
+                    <div class="portrait-stage-wrap">
+                        <!-- Violet Halo Glow behind Head and Shoulders -->
+                        <div class="portrait-halo-glow" aria-hidden="true"></div>
+                        
+                        <!-- Portrait Cutout Image with seamless transparent background -->
+                        <div class="portrait-cutout-container">
+                            <img src="/images/khushi-portrait.png" 
+                                 th:src="@{/images/khushi-portrait.png}"
+                                 alt="Khushi Singh — Aspiring Java Full Stack Developer" 
+                                 class="portrait-cutout-img"
+                                 onerror="this.onerror=null; this.src='/images/khushi-cutout.png';">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="hero-right-col">
+                    <div class="creative-tag">
+                        Creative
+                    </div>
+
+                    <h2 class="hero-role-heading">
+                        <span class="role-colored">Java Full Stack</span>
+                        <span class="role-white">Developer</span>
+                    </h2>
+
+                    <div class="hero-mantra-line">
+                        <span class="mantra-text">Learning • Building • Growing</span>
+                        <span class="mantra-underline"></span>
+                    </div>
+
+                    <!-- Quote Card -->
+                    <div class="hero-quote-card">
+                        <span class="quote-icon" aria-hidden="true">“</span>
+                        <p class="quote-body" th:text="${profile.quote}">
+                            Turning ideas into meaningful projects through code.
+                        </p>
+                    </div>
+
+                    <!-- Download Resume Button -->
+                    <div class="resume-wrapper">
+                        <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="resume-action-link" id="resumeActionBtn">
+                            <span>Download Resume</span>
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Subtle Bottom Scroll Indicator -->
+            <div class="hero-bottom-cue">
+                <a href="#skills" class="scroll-indicator-link" aria-label="Scroll down to Skills section">
+                    <span class="scroll-mouse-icon">
+                        <span class="scroll-wheel-dot"></span>
+                    </span>
+                    <span class="scroll-cue-text">Scroll to explore</span>
+                </a>
+            </div>
+        </header>
+
+
+        <!-- ========================================================================= -->
+        <!-- 2. SECTION: My Skills & Tech Stack (Above Journey)                        -->
+        <!-- ========================================================================= -->
+        <div class="bento-row bento-row-full" id="skillsSectionRow">
+
+            <!-- Card: My Skills -->
+            <section class="bento-card card-my-skills" id="skills" aria-labelledby="headingSkills">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </span>
+                        <h2 class="bento-title" id="headingSkills">My Skills &amp; Tech Stack</h2>
+                    </div>
+                    <span class="header-pill-badge">Tools &amp; Technologies</span>
+                </div>
+
+                <!-- Java Focused Showcase (Java only for now) -->
+                <div class="skills-java-showcase-container">
+                    <div class="skill-cluster-box java-highlight-card">
+                        <div class="java-card-content">
+                            <span class="badge-icon icon-java java-large-icon">
+                                <svg viewBox="0 0 24 24" width="34" height="34" fill="none">
+                                    <path d="M8.5 17.5c2.5 1 6.5 1 8.5-1M8 19.5c3.5 1 7.5 1 10-1" stroke="#f89820" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M6 14.5c4 1 10 1 13-1" stroke="#5382a1" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M12 2c-1.5 2.5 1 4-1 6.5-2 2.5.5 3.5 0 5" stroke="#f89820" stroke-width="2.2" stroke-linecap="round"/>
+                                    <path d="M15 4c-1.5 2 1 3-1 5" stroke="#5382a1" stroke-width="2.2" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                            <div class="java-text-details">
+                                <h3 class="java-main-title">Java Programming</h3>
+                                <p class="java-desc-text">Core Java • Object-Oriented Programming (OOP) • Full Stack Development • Spring Boot Architecture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 3. SECTION: Interactive Projects Showcase (Above Journey)                 -->
+        <!-- ========================================================================= -->
+        <div class="bento-row bento-row-full" id="projectsSectionRow">
+
+            <!-- Card: Projects Showcase -->
+            <section class="bento-card card-projects" id="projects" aria-labelledby="headingProjects">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                            </svg>
+                        </span>
+                        <div>
+                            <h2 class="bento-title" id="headingProjects">Interactive Projects Showcase</h2>
+                        </div>
+                    </div>
+
+                    <!-- Project Tabs Switcher -->
+                    <div class="project-tabs-nav">
+                        <button type="button" class="proj-tab-btn" data-tab="personal">🌟 Personal</button>
+                        <button type="button" class="proj-tab-btn active" data-tab="collab">🤝 Collab</button>
+                        <button type="button" class="proj-tab-btn" data-tab="all">All Projects</button>
+                    </div>
+                </div>
+
+                <div class="projects-guide-banner">
+                    <p class="projects-guide-text">
+                        ✨ <strong>Interactive Showcase</strong>: Click any project card to inspect the complete system architecture, technologies, screenshots, and <strong>Khushi's verified role &amp; actual contribution</strong>.
+                    </p>
+                </div>
+
+                <!-- Projects Dynamic Grid (Clickable Cards) -->
+                <div class="projects-dynamic-grid" id="projectsContainer">
+                    <div th:each="project : ${profile.projects}" 
+                         class="project-item-card clickable-project-card" 
+                         th:attr="data-id=${project.id},
+                                  data-category=${project.category},
+                                  data-title=${project.title},
+                                  data-role=${project.role},
+                                  data-contribution=${project.contribution},
+                                  data-description=${project.fullDescription},
+                                  data-tech=${project.techStack},
+                                  data-github=${project.githubUrl},
+                                  data-live=${project.liveUrl},
+                                  data-coming=${project.comingSoon}">
+                        
+                        <div class="project-card-top">
+                            <span class="project-category-badge" 
+                                  th:classappend="${project.category == 'PERSONAL'} ? 'badge-personal' : 'badge-collab'"
+                                  th:text="${project.category == 'PERSONAL'} ? '🌟 Personal' : '🤝 Collab'">
+                                Personal
+                            </span>
+                            <span th:if="${project.comingSoon}" class="project-status-badge">In Progress</span>
+                            <span th:if="${!project.comingSoon}" class="project-status-badge badge-active">Active Showcase</span>
+                        </div>
+
+                        <h3 class="project-card-title" th:text="${project.title}">Project Title</h3>
+
+                        <!-- Role Pill -->
+                        <div class="project-role-badge-row" th:if="${project.role != null}">
+                            <span class="project-role-pill">
+                                <span class="role-icon-symbol">👩‍💻</span>
+                                <span class="role-title-text" th:text="${project.role}">Role Title</span>
+                            </span>
+                        </div>
+
+                        <p class="project-card-desc" th:text="${project.description}">Project description</p>
+
+                        <div class="project-tech-tags">
+                            <span class="tech-tag" th:text="${project.techStack}">Tech Stack</span>
+                        </div>
+
+                        <!-- Card Footer Action Row -->
+                        <div class="project-card-bottom-row">
+                            <span class="open-details-hint">
+                                <span>Inspect Details &amp; Contribution</span>
+                                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </span>
+
+                            <div class="project-direct-links" onclick="event.stopPropagation();">
+                                <a th:if="${project.githubUrl != null}" 
+                                   th:href="${project.githubUrl}" 
+                                   target="_blank" rel="noopener noreferrer" 
+                                   class="proj-link-btn btn-github"
+                                   title="View GitHub Repository">
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                                    </svg>
+                                </a>
+                                <a th:if="${project.liveUrl != null}" 
+                                   th:href="${project.liveUrl}" 
+                                   target="_blank" rel="noopener noreferrer" 
+                                   class="proj-link-btn btn-live"
+                                   title="Open Live Project Demo">
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hidden Highlights List for Modal Ingestion -->
+                        <ul class="project-hidden-highlights" style="display: none;">
+                            <li th:each="hl : ${project.highlights}" th:text="${hl}">Highlight</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 4. SECTION ROW: Her Learning Journey (Alternating Spine Timeline)         -->
+        <!-- ========================================================================= -->
+        <div class="bento-row bento-row-full" id="journeySectionRow">
+
+            <section class="bento-card card-journey" id="journey" aria-labelledby="headingJourney">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </span>
+                        <div>
+                            <h2 class="bento-title" id="headingJourney">Her Learning Journey</h2>
+                        </div>
+                    </div>
+                    <span class="header-pill-badge">Timeline &amp; Milestones</span>
+                </div>
+
+                <!-- Alternating Vertical Spine Timeline -->
+                <div class="vertical-timeline-container">
+                    <div class="vertical-timeline-spine" aria-hidden="true"></div>
+
+                    <div class="timeline-items-list">
+                        <div th:each="milestone, iterStat : ${profile.learningJourney}" 
+                             class="timeline-row" 
+                             th:classappend="${iterStat.even} ? 'timeline-row-left' : 'timeline-row-right'">
+                            
+                            <!-- Left Card Slot -->
+                            <div class="timeline-slot slot-left">
+                                <div th:if="${iterStat.even}" class="timeline-card-box" th:classappend="${milestone.draft} ? 'timeline-draft-box' : ''">
+                                    <div class="timeline-card-header">
+                                        <span class="timeline-card-year" th:text="${milestone.year}">2025</span>
+                                        <span th:if="${milestone.tag != null}" 
+                                              class="timeline-main-badge" 
+                                              th:classappend="${milestone.draft} ? 'badge-draft' : (${milestone.dotColor == 'blue'} ? 'badge-collab-tag' : (${milestone.dotColor == 'emerald'} ? 'badge-emerald' : 'badge-neutral'))" 
+                                              th:text="${milestone.tag}">MAIN</span>
+                                    </div>
+                                    <h3 class="timeline-card-title" th:text="${milestone.title}">Milestone Title</h3>
+                                    <p class="timeline-card-description" th:text="${milestone.description}">
+                                        Milestone description.
+                                    </p>
+                                    <div th:if="${milestone.reviewNote != null}" 
+                                         class="timeline-review-note" 
+                                         th:classappend="${milestone.draft} ? 'note-draft' : 'note-info'">
+                                        <span class="review-note-icon" th:text="${milestone.draft} ? '⚠️' : 'ℹ️'">ℹ️</span>
+                                        <span class="review-note-text" th:text="${milestone.reviewNote}">Note text</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Central Spine Dot -->
+                            <div class="timeline-node-wrapper">
+                                <span class="timeline-node-dot" 
+                                      th:classappend="${milestone.dotColor == 'emerald'} ? 'dot-emerald' : (${milestone.dotColor == 'amber'} ? 'dot-amber' : (${milestone.dotColor == 'blue'} ? 'dot-blue' : 'dot-white'))"></span>
+                            </div>
+
+                            <!-- Right Card Slot -->
+                            <div class="timeline-slot slot-right">
+                                <div th:if="${!iterStat.even}" class="timeline-card-box" th:classappend="${milestone.draft} ? 'timeline-draft-box' : ''">
+                                    <div class="timeline-card-header">
+                                        <span class="timeline-card-year" th:text="${milestone.year}">2025</span>
+                                        <span th:if="${milestone.tag != null}" 
+                                              class="timeline-main-badge" 
+                                              th:classappend="${milestone.draft} ? 'badge-draft' : (${milestone.dotColor == 'blue'} ? 'badge-collab-tag' : (${milestone.dotColor == 'emerald'} ? 'badge-emerald' : 'badge-neutral'))" 
+                                              th:text="${milestone.tag}">MAIN</span>
+                                    </div>
+                                    <h3 class="timeline-card-title" th:text="${milestone.title}">Milestone Title</h3>
+                                    <p class="timeline-card-description" th:text="${milestone.description}">
+                                        Milestone description.
+                                    </p>
+                                    <div th:if="${milestone.reviewNote != null}" 
+                                         class="timeline-review-note" 
+                                         th:classappend="${milestone.draft} ? 'note-draft' : 'note-info'">
+                                        <span class="review-note-icon" th:text="${milestone.draft} ? '⚠️' : 'ℹ️'">ℹ️</span>
+                                        <span class="review-note-text" th:text="${milestone.reviewNote}">Note text</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 5. SECTION ROW: Education & Licenses & Certifications                     -->
+        <!-- ========================================================================= -->
+        <div class="bento-row">
+
+            <!-- Card A: Education -->
+            <section class="bento-card card-education" id="education" aria-labelledby="headingEdu">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg>
+                        </span>
+                        <h2 class="bento-title" id="headingEdu">Education</h2>
+                    </div>
+                </div>
+
+                <div class="edu-card-content">
+                    <div class="edu-crest-icon">
+                        <img src="/images/sdiet-logo.png" 
+                             th:src="@{/images/sdiet-logo.png}" 
+                             alt="Satyug Darshan Institute of Engineering & Technology Logo" 
+                             class="edu-crest-img">
+                    </div>
+                    <div class="edu-text-info">
+                        <h3 class="edu-institution-title" th:text="${profile.education.institution}">
+                            Satyug Darshan Institute of Engineering &amp; Technology
+                        </h3>
+                        <p class="edu-degree-subtitle" th:text="${profile.education.degree}">
+                            Bachelor of Computer Applications (BCA)
+                        </p>
+                        <span class="edu-date-badge" th:text="${profile.education.period}">
+                            Aug 2025 – Jun 2028
+                        </span>
+                        <p class="edu-activities-text" th:text="${profile.education.activities}">
+                            Activities and societies: Coding, college projects, technical presentations, hackathons, and technology-related learning activities.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card B: Licenses & Certifications -->
+            <section class="bento-card card-certifications" id="certifications" aria-labelledby="headingCerts">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </span>
+                        <h2 class="bento-title" id="headingCerts">Licenses &amp; Certifications</h2>
+                    </div>
+                    <span class="header-pill-badge">Certifications</span>
+                </div>
+
+                <!-- Dynamic Certifications Grid -->
+                <div class="certs-bento-grid">
+                    
+                    <div th:each="cert : ${profile.certifications}"
+                         class="cert-box clickable-cert-card"
+                         th:attr="data-id=${cert.id},
+                                  data-title=${cert.title},
+                                  data-issuer=${cert.issuer},
+                                  data-date=${cert.date},
+                                  data-credential-id=${cert.credentialId},
+                                  data-url=${cert.certUrl},
+                                  data-skills=${cert.skills},
+                                  data-description=${cert.description}">
+                        
+                        <div class="cert-logo-box" th:classappend="'logo-' + ${cert.logoType}">
+                            <!-- SDIET Logo -->
+                            <img th:if="${cert.logoType == 'sdiet'}" 
+                                 src="/images/sdiet-logo.png" 
+                                 th:src="@{/images/sdiet-logo.png}" 
+                                 alt="SDIET Logo" 
+                                 class="cert-sdiet-logo-img">
+                            
+                            <!-- IBM Logo -->
+                            <svg th:if="${cert.logoType == 'ibm'}" viewBox="0 0 36 36" width="28" height="28" fill="#ffffff">
+                                <rect x="4" y="8" width="28" height="3" fill="#0062ff"/>
+                                <rect x="4" y="13" width="28" height="3" fill="#0062ff"/>
+                                <rect x="4" y="18" width="28" height="3" fill="#0062ff"/>
+                                <rect x="4" y="23" width="28" height="3" fill="#0062ff"/>
+                                <text x="18" y="22" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle" font-family="sans-serif">IBM</text>
+                            </svg>
+                            
+                            <!-- LetsUpgrade Logo -->
+                            <svg th:if="${cert.logoType == 'letsupgrade' || cert.logoType == 'letsupgrade-java' || cert.logoType == 'letsupgrade-python'}" viewBox="0 0 36 36" width="28" height="28" fill="none">
+                                <rect width="36" height="36" rx="8" fill="#fa5a2a"/>
+                                <path d="M12 24c3 1 8 1 12-1M11 26c4 1 9 1 14-1" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M18 10c-1.5 2.5 1 4-1 6.5-2 2.5.5 3.5 0 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                            
+                            <!-- NPTEL Logo -->
+                            <svg th:if="${cert.logoType == 'nptel'}" viewBox="0 0 36 36" width="28" height="28" fill="none">
+                                <rect width="36" height="36" rx="8" fill="#1976d2"/>
+                                <path d="M10 24V12l10 5.5v2L10 14" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="23" cy="22" r="3" fill="#ffffff"/>
+                            </svg>
+                            
+                            <!-- ULSA / Default Logo -->
+                            <svg th:if="${cert.logoType == 'ulsa' || (cert.logoType != 'sdiet' && cert.logoType != 'ibm' && cert.logoType != 'letsupgrade' && cert.logoType != 'letsupgrade-java' && cert.logoType != 'letsupgrade-python' && cert.logoType != 'nptel')}" viewBox="0 0 36 36" width="28" height="28" fill="none">
+                                <rect width="36" height="36" rx="8" fill="#3f51b5"/>
+                                <circle cx="18" cy="14" r="5" fill="#ffffff"/>
+                                <path d="M10 26c0-4 4-6 8-6s8 2 8 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="cert-text-info">
+                            <h3 class="cert-name" th:text="${cert.title}">Certification Title</h3>
+                            <p class="cert-org" th:text="${cert.issuer}">Issuer Organization</p>
+                            <span class="cert-time" th:text="${cert.date}">Date</span>
+                            <div class="cert-id-tag" th:if="${cert.credentialId != null && !cert.credentialId.isEmpty()}">
+                                <code th:text="${cert.credentialId}">CRED-ID</code>
+                            </div>
+                            <span class="cert-inspect-hint">Click to inspect ↗</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 6. SECTION ROW: About Me (Shifted to the last before Contact)             -->
+        <!-- ========================================================================= -->
+        <div class="bento-row bento-row-full" id="aboutSectionRow">
+
+            <!-- Card: About Me -->
+            <section class="bento-card card-about-me" id="about" aria-labelledby="headingAbout">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+                                <circle cx="9" cy="10" r="2"></circle>
+                                <line x1="15" y1="8" x2="17" y2="8"></line>
+                                <line x1="15" y1="12" x2="17" y2="12"></line>
+                                <line x1="7" y1="16" x2="17" y2="16"></line>
+                            </svg>
+                        </span>
+                        <h2 class="bento-title" id="headingAbout">About Me</h2>
+                    </div>
+                    <span class="header-pill-badge">Personal Story</span>
+                </div>
+
+                <div class="about-flex-content">
+                    <div class="about-text-area">
+                        <p>
+                            I am a BCA student at <strong>Satyug Darshan Institute of Engineering &amp; Technology</strong> with a focused dedication to software engineering and robust application development, currently advancing my skills towards becoming a <strong>Java Full Stack Developer</strong>.
+                        </p>
+                        <p>
+                            I have built strong foundations in <strong>Java, Python, C, and SQL databases</strong>, while actively developing responsive web architectures, collaborative Git/GitHub workflows, and production-grade backend systems.
+                        </p>
+                        <p>
+                            I enjoy coding, continuous learning, strengthening my algorithmic problem-solving skills, and building practical applications that solve real-world challenges.
+                        </p>
+
+                        <a href="#contact" class="btn-text-action">
+                            <span>Get In Touch</span>
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Mini Portrait with Handwritten Note -->
+                    <div class="about-photo-highlight">
+                        <div class="photo-frame">
+                            <img src="/images/khushi-about-portrait.png" 
+                                 th:src="@{/images/khushi-about-portrait.png}" 
+                                 alt="Khushi Singh" 
+                                 class="photo-thumb"
+                                 onerror="this.onerror=null; this.src='/images/khushi-portrait.png';">
+                            <div class="photo-overlay-note">
+                                <p class="script-quote">
+                                    Keep<br>
+                                    Learning<br>
+                                    Keep<br>
+                                    Building &lt;3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 7. SECTION ROW: Contact Me                                                -->
+        <!-- ========================================================================= -->
+        <div class="bento-row bento-row-full" id="contactSectionRow">
+
+            <!-- Card: Contact Me -->
+            <section class="bento-card card-contact" id="contact" aria-labelledby="headingContact">
+                <div class="bento-header">
+                    <div class="header-title-box">
+                        <span class="header-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </span>
+                        <h2 class="bento-title" id="headingContact">Contact Me</h2>
+                    </div>
+                    <span class="header-pill-badge">Open for Opportunities</span>
+                </div>
+
+                <div class="contact-card-grid">
+                    <div class="contact-info-col">
+                        <p class="contact-motto">
+                            Let's connect and create something meaningful together!
+                        </p>
+
+                        <div class="contact-links-list">
+                            <!-- LinkedIn -->
+                            <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="contact-entry-row" title="LinkedIn Profile">
+                                <span class="contact-entry-icon">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.92 0-1.67-.75-1.67-1.67s.75-1.67 1.67-1.67 1.67.75 1.67 1.67-.75 1.67-1.67 1.67m1.4 10.18v-8.37H5.06v8.37h2.8z"/>
+                                    </svg>
+                                </span>
+                                <span class="contact-entry-label">linkedin.com/in/khushi-singh-0a9a9738a</span>
+                            </a>
+
+                            <!-- Location -->
+                            <div class="contact-entry-row">
+                                <span class="contact-entry-icon">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </span>
+                                <span class="contact-entry-label" th:text="${profile.location}">Faridabad, Haryana, India</span>
+                            </div>
+                        </div>
+
+                        <!-- Send Message CTA -->
+                        <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="btn-send-cta">
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            <span>Send a Message</span>
+                        </a>
+                    </div>
+
+                    <!-- Graphic Art Note -->
+                    <div class="contact-graphic-col" aria-hidden="true">
+                        <div class="contact-floating-plane">
+                            <svg viewBox="0 0 60 60" width="44" height="44" fill="none">
+                                <path d="M56 4L26 34M56 4L38 58 26 34 2 22 56 4z" stroke="#9b6dff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="contact-script-text">
+                            Let's<br>
+                            Build<br>
+                            Something<br>
+                            Great &lt;3
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- 8. FOOTER                                                                 -->
+        <!-- ========================================================================= -->
+        <footer class="portfolio-footer">
+            <div class="footer-inner">
+                <p class="footer-copyright">
+                    &copy; 2026 <strong>Khushi Singh</strong> • Aspiring Java Full Stack Developer
+                </p>
+                <div class="footer-nav-links">
+                    <a href="#home" class="footer-nav-item">Back to Top ↑</a>
+                    <span class="footer-divider">•</span>
+                    <a th:href="${profile.linkedinUrl}" href="https://www.linkedin.com/in/khushi-singh-0a9a9738a/" target="_blank" rel="noopener noreferrer" class="footer-nav-item">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ============================================================================= -->
+    <!-- INTERACTIVE PROJECT DETAILS MODAL DIALOG                                      -->
+    <!-- ============================================================================= -->
+    <div id="projectModal" class="project-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="project-modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details modal">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="modal-header-top">
+                <span class="modal-category-badge" id="modalCategoryBadge">🌟 Personal Project</span>
+                <span class="modal-status-badge" id="modalStatusBadge">Active</span>
+            </div>
+
+            <h2 class="modal-project-title" id="modalTitle">Project Title</h2>
+            <div class="modal-tech-stack" id="modalTechStack">Java • Spring Boot</div>
+
+            <!-- Khushi's Role & Contribution Highlight Box -->
+            <div class="modal-contribution-box">
+                <div class="contribution-header">
+                    <span class="contribution-icon">👩‍💻</span>
+                    <span class="contribution-heading">Khushi's Verified Role &amp; Contribution</span>
+                </div>
+                <div class="contribution-role-pill" id="modalRole">Lead Developer</div>
+                <p class="contribution-text" id="modalContribution">Description of contribution...</p>
+            </div>
+
+            <!-- Full Project Overview -->
+            <div class="modal-section-block">
+                <h4 class="modal-section-title">System Architecture &amp; Overview</h4>
+                <p class="modal-description-text" id="modalDescription">Overview...</p>
+            </div>
+
+            <!-- Key Highlights List -->
+            <div class="modal-section-block" id="modalHighlightsSection">
+                <h4 class="modal-section-title">Key Architectural Highlights</h4>
+                <ul class="modal-highlights-list" id="modalHighlightsList">
+                    <!-- Populated dynamically via JS -->
+                </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="modal-actions-footer">
+                <a href="#" id="modalGithubBtn" target="_blank" rel="noopener noreferrer" class="modal-action-btn btn-github-action">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                    <span>View Repository</span>
+                </a>
+                <a href="#" id="modalLiveBtn" target="_blank" rel="noopener noreferrer" class="modal-action-btn btn-live-action">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>Open Live Demo</span>
+                </a>
+                <button type="button" class="modal-action-btn btn-close-action" id="modalDismissBtn">
+                    <span>Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================================= -->
+    <!-- INTERACTIVE CERTIFICATION DETAILS MODAL DIALOG                                -->
+    <!-- ============================================================================= -->
+    <div id="certModal" class="project-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="project-modal-container cert-modal-container">
+            <button class="modal-close-btn" id="certModalCloseBtn" aria-label="Close certificate modal">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="modal-header-top">
+                <span class="modal-category-badge cert-issuer-pill" id="certModalIssuer">Issuer</span>
+                <span class="modal-status-badge badge-active" id="certModalDate">Issue Date</span>
+            </div>
+
+            <h2 class="modal-project-title" id="certModalTitle">Certificate Title</h2>
+
+            <!-- Credential ID Box -->
+            <div class="cert-credential-info-box" id="certModalCredBox">
+                <div class="credential-box-header">
+                    <span class="cred-icon">📜</span>
+                    <span class="cred-heading-label">Credential Verification Details</span>
+                </div>
+                <div class="credential-id-row">
+                    <span class="cred-key">Credential ID:</span>
+                    <code class="cred-value-code" id="certModalCredId">N/A</code>
+                    <button type="button" class="btn-copy-id" id="certCopyIdBtn" title="Copy Credential ID">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Copy</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Skills Acquired -->
+            <div class="modal-section-block" id="certModalSkillsBlock">
+                <h4 class="modal-section-title">Key Competencies &amp; Technologies</h4>
+                <div class="cert-skills-badge-wrap" id="certModalSkills">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="modal-section-block">
+                <h4 class="modal-section-title">Program &amp; Assessment Scope</h4>
+                <p class="modal-description-text" id="certModalDesc">Detailed scope...</p>
+            </div>
+
+            <!-- Actions Footer -->
+            <div class="modal-actions-footer">
+                <a href="#" id="certModalViewBtn" target="_blank" rel="noopener noreferrer" class="modal-action-btn btn-live-action">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>View Certificate / Verify</span>
+                </a>
+                <button type="button" class="modal-action-btn btn-close-action" id="certModalDismissBtn">
+                    <span>Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div id="toastAlert" class="toast-alert" role="status" aria-live="polite"></div>
+
+    <!-- Subtle Easter Egg Star -->
+    <div class="easter-egg-wrapper" id="easterEggWrapper">
+        <button type="button" class="easter-egg-star" id="easterEggStar" aria-label="A tiny spark of inspiration" title="✦">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M12 2l2.6 6.9 7.4.6-5.6 4.8 1.7 7.2L12 17.7 5.9 21.5l1.7-7.2L2 9.5l7.4-.6L12 2z"/>
+            </svg>
+        </button>
+        <div class="easter-egg-card" id="easterEggCard" role="status" aria-live="polite">
+            <p class="easter-egg-quote">“Keep learning. Keep building. Your journey is just getting started. ♡”</p>
+        </div>
+    </div>
+
+    <!-- Interactive Script -->
+    <script th:src="@{/js/main.js}" src="/js/main.js"></script>
+</body>
+</html>
