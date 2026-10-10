@@ -297,16 +297,16 @@
                 <div class="projects-dynamic-grid" id="projectsContainer">
                     <div th:each="project : ${profile.projects}" 
                          class="project-item-card clickable-project-card" 
-                         th:attr="data-id=${project.id},
-                                  data-category=${project.category},
-                                  data-title=${project.title},
-                                  data-role=${project.role},
-                                  data-contribution=${project.contribution},
-                                  data-description=${project.fullDescription},
-                                  data-tech=${project.techStack},
-                                  data-github=${project.githubUrl},
-                                  data-live=${project.liveUrl},
-                                  data-coming=${project.comingSoon}">
+                         th:data-id="${project.id}"
+                         th:data-category="${project.category}"
+                         th:data-title="${project.title}"
+                         th:data-role="${project.role}"
+                         th:data-contribution="${project.contribution}"
+                         th:data-description="${project.fullDescription}"
+                         th:data-tech="${project.techStack}"
+                         th:data-github="${project.githubUrl}"
+                         th:data-live="${project.liveUrl}"
+                         th:data-coming="${project.comingSoon}">
                         
                         <div class="project-card-top">
                             <span class="project-category-badge" 
@@ -535,14 +535,14 @@
                     
                     <div th:each="cert : ${profile.certifications}"
                          class="cert-box clickable-cert-card"
-                         th:attr="data-id=${cert.id},
-                                  data-title=${cert.title},
-                                  data-issuer=${cert.issuer},
-                                  data-date=${cert.date},
-                                  data-credential-id=${cert.credentialId},
-                                  data-url=${cert.certUrl},
-                                  data-skills=${cert.skills},
-                                  data-description=${cert.description}">
+                         th:data-id="${cert.id}"
+                         th:data-title="${cert.title}"
+                         th:data-issuer="${cert.issuer}"
+                         th:data-date="${cert.date}"
+                         th:data-credential-id="${cert.credentialId}"
+                         th:data-url="${cert.certUrl}"
+                         th:data-skills="${cert.skills}"
+                         th:data-description="${cert.description}">
                         
                         <div class="cert-logo-box" th:classappend="'logo-' + ${cert.logoType}">
                             <!-- SDIET Logo -->
