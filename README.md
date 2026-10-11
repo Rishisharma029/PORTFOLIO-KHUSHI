@@ -209,6 +209,24 @@ Run the built JAR directly:
 java -jar target/kushu-portfolio-0.0.1-SNAPSHOT.jar
 ```
 
+### 7. Running with Docker & Docker Compose 🐳
+
+Build and run using the multi-stage Dockerfile:
+```bash
+docker build -t kushu-portfolio .
+docker run -d -p 8080:8080 --name kushu-portfolio-app kushu-portfolio
+```
+
+Or launch with single-command Docker Compose:
+```bash
+docker compose up -d
+```
+
+Check container logs and health:
+```bash
+docker compose logs -f
+```
+
 ---
 
 ## 📁 Codebase Map

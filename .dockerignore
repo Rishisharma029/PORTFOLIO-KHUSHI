@@ -1,0 +1,28 @@
+# Git & Version Control
+.git/
+.gitignore
+
+# Maven & Build Artefacts
+target/
+dist/
+*.log
+
+# IDE & Editor Configurations
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Documentation & Export scripts
+*.md
+export-static.bat
+export-static.sh
+docker-compose.yml

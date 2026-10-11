@@ -1,0 +1,70 @@
+name: CI Pipeline — Build, Test & Docker Verification
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-verify:
+    name: Build & Test (JDK 21)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21 (Eclipse Temurin)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Grant Execute Permissions to Maven Wrapper
+        run: chmod +x mvnw
+
+      - name: Compile & Run All Automated Tests
+        run: ./mvnw clean test -B
+
+      - name: Verify Static Site Export Generated
+        run: |
+          test -f dist/index.html || { echo "dist/index.html not found!"; exit 1; }
+          echo "Static export verified successfully."
+
+      - name: Archive Static Export Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site-dist
+          path: dist/
+          retention-days: 7
+
+  docker-verification:
+    name: Docker Build & Health Check
+    needs: test-and-verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Container
+        run: |
+          docker build -t kushu-portfolio:ci .
+
+      - name: Verify Docker Container Boots & Serves HTTP
+        run: |
+          docker run -d --name test-portfolio -p 8080:8080 kushu-portfolio:ci
+          sleep 10
+          docker ps
+          curl --fail --retry 5 --retry-delay 2 http://localhost:8080/ || { docker logs test-portfolio; exit 1; }
+          docker stop test-portfolio
