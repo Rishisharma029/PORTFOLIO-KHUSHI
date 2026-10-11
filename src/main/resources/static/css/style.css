@@ -709,7 +709,9 @@ strong {
     .hero-mantra-line,
     .hero-quote-card,
     .resume-wrapper,
-    .hero-bottom-cue {
+    .hero-bottom-cue,
+    .scroll-mouse-icon,
+    .scroll-wheel-dot {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -728,26 +730,36 @@ strong {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: var(--text-muted);
     transition: var(--anim-transition);
-    opacity: 0.75;
+    opacity: 0.82;
+    text-decoration: none;
 }
 
 .scroll-indicator-link:hover {
     color: var(--accent-lavender);
     opacity: 1;
-    transform: translateY(2px);
 }
 
+/* Tiny Mouse Icon with Gentle Vertical Floating/Bobbing Motion */
 .scroll-mouse-icon {
-    width: 20px;
-    height: 30px;
+    width: 22px;
+    height: 34px;
     border: 2px solid var(--accent-lavender);
     border-radius: 12px;
     display: flex;
     justify-content: center;
     padding-top: 5px;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+    animation: mouseBobbing 2.4s ease-in-out infinite;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    will-change: transform;
+}
+
+.scroll-indicator-link:hover .scroll-mouse-icon {
+    border-color: #ffffff;
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.65), 0 0 24px rgba(168, 85, 247, 0.35);
 }
 
 .scroll-wheel-dot {
@@ -755,18 +767,45 @@ strong {
     height: 6px;
     background: var(--accent-lavender);
     border-radius: 2px;
-    animation: mouseScroll 2s ease-in-out infinite;
+    animation: mouseWheelScroll 2.4s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
-@keyframes mouseScroll {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(8px); opacity: 0; }
+.scroll-indicator-link:hover .scroll-wheel-dot {
+    background: #ffffff;
+}
+
+/* Gentle vertical floating hint for mouse icon */
+@keyframes mouseBobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+/* Synchronized wheel dot travel down the mouse chamber */
+@keyframes mouseWheelScroll {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(6px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
 }
 
 .scroll-cue-text {
     font-size: 0.74rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 /* ==========================================================================
