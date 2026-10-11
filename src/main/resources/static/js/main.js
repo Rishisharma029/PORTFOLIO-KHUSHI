@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initContentProtection();
     initNavigation();
+    initScrollReveals();
     initProjectTabs();
     initProjectModal();
     initCertModal();
@@ -601,6 +602,81 @@ function initContentProtection() {
     });
 }
 
+/**
+ * Scroll-Triggered Reveals (IntersectionObserver)
+ * - Gradually fades in & moves upward: About, Skills, Education, Certifications
+ * - Learning Journey timeline reveals each milestone in sequence
+ */
+function initScrollReveals() {
+    // Respect user's accessibility preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
 
+    // Graceful fallback if IntersectionObserver is not supported
+    if (!('IntersectionObserver' in window)) {
+        return;
+    }
 
+    // Enable CSS styling hook only when JS & IntersectionObserver are active
+    document.documentElement.classList.add('js-reveal-active');
 
+    // 1. Reveal Sections: About, Skills, Education, Certifications
+    const revealSections = document.querySelectorAll('#about, #skills, #education, #certifications, .scroll-reveal');
+    if (revealSections.length) {
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealSections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+
+    // 2. Learning Journey Timeline: Sequential reveal of milestones
+    const timelineRows = document.querySelectorAll('#journey .timeline-row');
+    if (timelineRows.length) {
+        const sequenceQueue = [];
+        let isProcessing = false;
+
+        function processQueue() {
+            if (!sequenceQueue.length) {
+                isProcessing = false;
+                return;
+            }
+            isProcessing = true;
+            const nextRow = sequenceQueue.shift();
+            if (nextRow && !nextRow.classList.contains('is-revealed')) {
+                nextRow.classList.add('is-revealed');
+            }
+            setTimeout(processQueue, 120);
+        }
+
+        const timelineObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target);
+                    sequenceQueue.push(entry.target);
+                    if (!isProcessing) {
+                        processQueue();
+                    }
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        timelineRows.forEach(row => {
+            timelineObserver.observe(row);
+        });
+    }
+}
