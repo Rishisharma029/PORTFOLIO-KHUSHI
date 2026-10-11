@@ -83,7 +83,7 @@ public class PortfolioService {
         profile.setLinkedinUrl("https://www.linkedin.com/in/khushi-singh-0a9a9738a/");
         profile.setGithubUrl(null);
         profile.setEmail(null);
-        profile.setPortraitPath("/images/khushi-portrait.jpg");
+        profile.setPortraitPath(null);
 
         // 2. About Bio
         profile.setBio("I am a BCA student with a strong interest in software development and programming. "
@@ -326,7 +326,7 @@ public class PortfolioService {
                 "Architected the entire backend application, engineered the Spring MVC controllers and service layer, handcrafted custom dark plum glassmorphism UI styles, and automated continuous test suites.",
                 null,
                 "http://localhost:8080",
-                "/images/khushi-photo-crop.jpg",
+                null,
                 false,
                 List.of("Java 21 & Spring Boot 3.3.4 MVC backend", "Thymeleaf 3 server-side HTML rendering", "Custom plum & radiant violet bento design tokens", "Zero bloated client frameworks — 100% clean vanilla JS")
         ));

@@ -9,7 +9,7 @@
   "linkedinUrl": "https://www.linkedin.com/in/khushi-singh-0a9a9738a/",
   "githubUrl": null,
   "email": null,
-  "portraitPath": "/images/khushi-portrait.jpg",
+  "portraitPath": null,
   "bio": "I am a BCA student with a strong interest in software development and programming. I am currently working towards becoming a Java Full Stack Developer.\n\nI have learned the basics of Java, Python, and C, and I am currently developing my skills in web development, databases, Git/GitHub, and full-stack technologies.\n\nI enjoy coding and building practical projects that solve real-world problems. I am continuously learning new technologies and looking for opportunities to improve my technical and problem-solving skills.",
   
   "education": {
@@ -265,7 +265,7 @@
       "contribution": "Architected the entire backend application, engineered the Spring MVC controllers and service layer, handcrafted custom dark plum glassmorphism UI styles, and automated continuous test suites.",
       "githubUrl": null,
       "liveUrl": "http://localhost:8080",
-      "previewImage": "/images/khushi-photo-crop.jpg",
+      "previewImage": null,
       "comingSoon": false,
       "highlights": [
         "Java 21 & Spring Boot 3.3.4 MVC backend",

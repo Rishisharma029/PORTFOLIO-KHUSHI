@@ -257,10 +257,11 @@ kushu-portfolio/
 │   │           │   └── style.css                  # Custom styling, 100vh hero, and responsive tokens
 │   │           ├── js/
 │   │           │   └── main.js                    # Navigation tracking, project tab filters & toast alerts
+│   │           ├── data/
+│   │           │   └── theme-assets.dat           # High-resolution obfuscated visual bundle
 │   │           └── images/
-│   │               ├── khushi-portrait.png        # Transparent feathered hero portrait
-│   │               ├── khushi-photo-crop.jpg      # About card thumbnail portrait
-│   │               └── sdiet-logo.png             # Official Satyug Darshan Institute emblem
+│   │               ├── sdiet-logo.png             # Official Satyug Darshan Institute emblem
+│   │               └── java-logo.png              # Java Duke/Coffee emblem
 │   └── test/
 │       └── java/com/kushu/portfolio/
 │           ├── PortfolioApplicationTests.java     # Spring application context verification

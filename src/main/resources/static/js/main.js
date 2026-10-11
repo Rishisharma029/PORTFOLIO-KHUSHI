@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initContentProtection();
+    loadObfuscatedAssets();
     initNavigation();
     initScrollReveals();
     initProjectTabs();
@@ -15,6 +16,44 @@ document.addEventListener('DOMContentLoaded', () => {
     initResumeButton();
     initEasterEgg();
 });
+
+/**
+ * Loads obfuscated theme assets (portraits/graphics) without exposing raw image files
+ */
+async function loadObfuscatedAssets() {
+    const heroImg = document.getElementById('heroPortraitImg');
+    const aboutImg = document.getElementById('aboutPortraitImg');
+    if (!heroImg && !aboutImg) return;
+
+    try {
+        // Resolve data path relative to current URL for both local and GitHub Pages hosting
+        const dataUrl = new URL('data/theme-assets.dat', window.location.href.split('?')[0].replace(/[^/]*$/, '')).href;
+        const res = await fetch(dataUrl);
+        if (!res.ok) return;
+
+        const buffer = await res.arrayBuffer();
+        const bytes = new Uint8Array(buffer);
+        const key = [75, 104, 117, 115, 104, 105, 80, 111, 114, 116, 102, 111, 108, 105, 111, 65, 115, 115, 101, 116, 86, 97, 117, 108, 116, 50, 48, 50, 54];
+        
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] ^= key[i % key.length];
+        }
+
+        const decodedText = new TextDecoder('utf-8').decode(bytes);
+        const vault = JSON.parse(decodedText);
+
+        if (heroImg && vault.hero) {
+            heroImg.src = vault.hero;
+            heroImg.classList.add('loaded');
+        }
+        if (aboutImg && vault.about) {
+            aboutImg.src = vault.about;
+            aboutImg.classList.add('loaded');
+        }
+    } catch (err) {
+        console.debug('Asset vault load skipped or error:', err);
+    }
+}
 
 /**
  * Navigation Bar & Active Section Tracker

@@ -164,13 +164,12 @@
                             <span class="halo-star hs-6">✦</span>
                         </div>
                         
-                        <!-- Portrait Cutout Image with seamless transparent background -->
+                        <!-- Portrait Cutout Image loaded seamlessly from obfuscated assets -->
                         <div class="portrait-cutout-container">
-                            <img src="/images/khushi-portrait.png" 
-                                 th:src="@{/images/khushi-portrait.png}"
+                            <img id="heroPortraitImg"
+                                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Ccircle cx='150' cy='150' r='140' fill='%231f1338'/%3E%3C/svg%3E" 
                                  alt="Khushi Singh — Aspiring Java Full Stack Developer" 
-                                 class="portrait-cutout-img"
-                                 onerror="this.onerror=null; this.src='/images/khushi-cutout.png';">
+                                 class="portrait-cutout-img">
                         </div>
                     </div>
                 </div>
@@ -652,14 +651,13 @@
                         </a>
                     </div>
 
-                    <!-- Mini Portrait with Handwritten Note -->
+                    <!-- Mini Portrait with Handwritten Note loaded from obfuscated assets -->
                     <div class="about-photo-highlight">
                         <div class="photo-frame">
-                            <img src="/images/khushi-about-portrait.png" 
-                                 th:src="@{/images/khushi-about-portrait.png}" 
+                            <img id="aboutPortraitImg"
+                                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' rx='20' fill='%231f1338'/%3E%3C/svg%3E" 
                                  alt="Khushi Singh" 
-                                 class="photo-thumb"
-                                 onerror="this.onerror=null; this.src='/images/khushi-portrait.png';">
+                                 class="photo-thumb">
                             <div class="photo-overlay-note">
                                 <p class="script-quote">
                                     Keep<br>

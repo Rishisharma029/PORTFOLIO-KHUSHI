@@ -63,3 +63,8 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Raw Personal Photos (Protected & Loaded Via Theme Vault)
+*khushi*.png
+*khushi*.jpg
+*khushi*.jpeg
