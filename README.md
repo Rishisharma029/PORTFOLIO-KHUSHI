@@ -8,11 +8,12 @@
 [![Spring Boot 3.3.4](https://img.shields.io/badge/Spring_Boot-3.3.4-brightgreen.svg?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.x-005F0E.svg?logo=thymeleaf&logoColor=white)](https://www.thymeleaf.org/)
 [![Maven](https://img.shields.io/badge/Maven-3.9-C71A36.svg?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
-[![License: Custom Restricted](https://img.shields.io/badge/License-Proprietary_Restricted-purple.svg)](./LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Portfolio-GitHub_Pages-7C3AED.svg?logo=githubpages&logoColor=white)](https://rishisharma029.github.io/PORTFOLIO-KHUSHI/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/khushi-singh-0a9a9738a/)
 
 <p align="center">
-  <b>“Turning ideas into meaningful projects through code.”</b>
+  <b>🌐 Live Website: <a href="https://rishisharma029.github.io/PORTFOLIO-KHUSHI/">https://rishisharma029.github.io/PORTFOLIO-KHUSHI/</a></b><br>
+  <i>“Turning ideas into meaningful projects through code.”</i>
 </p>
 
 [✨ Welcome Khushi!](./WELCOME.md) •
@@ -226,6 +227,15 @@ Check container logs and health:
 ```bash
 docker compose logs -f
 ```
+
+---
+
+### 8. Live GitHub Pages Deployment 🚀
+
+The portfolio is continuously deployed to GitHub Pages with automated static site generation:
+
+- **Live URL**: **[https://rishisharma029.github.io/PORTFOLIO-KHUSHI/](https://rishisharma029.github.io/PORTFOLIO-KHUSHI/)**
+- **Automated Workflow**: Configured with `.github/workflows/deploy.yml` which compiles the application with Java 21, runs all test suites, exports static assets via `StaticSiteExportTest`, and publishes directly to GitHub Pages on every push to `main`.
 
 ---
 
