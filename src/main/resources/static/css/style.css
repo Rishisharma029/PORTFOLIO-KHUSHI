@@ -277,6 +277,7 @@ strong {
     display: flex;
     align-items: center;
     gap: 8px;
+    animation: heroFadeLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.02s both;
 }
 .pill-bar {
     display: inline-block;
@@ -293,6 +294,7 @@ strong {
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.035em;
+    animation: heroNameEntrance 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
 }
 
 .name-first {
@@ -310,6 +312,7 @@ strong {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    animation: heroFadeLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both;
 }
 
 .role-subheading {
@@ -328,6 +331,7 @@ strong {
     color: var(--text-secondary);
     line-height: 1.6;
     max-width: 400px;
+    animation: heroFadeLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
 }
 
 .hero-social-row {
@@ -335,6 +339,7 @@ strong {
     align-items: center;
     gap: 12px;
     margin-top: 8px;
+    animation: heroFadeLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
 }
 
 .social-circle-btn {
@@ -376,7 +381,7 @@ strong {
     align-items: flex-end;
 }
 
-/* Atmospheric Violet Halo Glow Behind Portrait (Smooth & Large) */
+/* Atmospheric Violet Halo Glow Behind Portrait (Smooth Entrance & Glow) */
 .portrait-halo-glow {
     position: absolute;
     top: 25px;
@@ -389,7 +394,7 @@ strong {
     filter: blur(32px);
     pointer-events: none;
     z-index: 1;
-    animation: haloGlowFloat 5s ease-in-out infinite alternate;
+    animation: heroHaloBrighten 1.2s cubic-bezier(0.2, 0.8, 0.3, 1) 0.25s both, haloGlowFloat 5s ease-in-out 1.45s infinite alternate;
 }
 
 @keyframes haloGlowFloat {
@@ -407,6 +412,7 @@ strong {
     justify-content: center;
     align-items: flex-end;
     overflow: visible;
+    animation: heroPortraitEntrance 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
 }
 
 .portrait-cutout-img {
@@ -434,6 +440,7 @@ strong {
     font-size: 0.95rem;
     color: var(--accent-lavender);
     font-weight: 600;
+    animation: heroFadeRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
 .hero-role-heading {
@@ -443,6 +450,7 @@ strong {
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.025em;
+    animation: heroTitleEntrance 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
 }
 
 .role-colored {
@@ -460,6 +468,7 @@ strong {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    animation: heroFadeRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
 }
 
 .mantra-text {
@@ -486,6 +495,7 @@ strong {
     max-width: 380px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    animation: heroFadeRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
 }
 
 .quote-icon {
@@ -507,6 +517,7 @@ strong {
 
 .resume-wrapper {
     margin-top: 6px;
+    animation: heroFadeRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.40s both;
 }
 
 .resume-action-link {
@@ -537,6 +548,122 @@ strong {
     align-items: center;
     padding-top: 10px;
     z-index: 10;
+    animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
+}
+
+/* ==========================================================================
+   HERO ENTRANCE ANIMATIONS (Smooth Stagger: 0.7s–1.2s)
+   ========================================================================== */
+
+/* Khushi's Name Entrance (Fades in from left) */
+@keyframes heroNameEntrance {
+    0% {
+        opacity: 0;
+        transform: translateX(-48px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Her Title Entrance (Enters from right) */
+@keyframes heroTitleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateX(48px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Portrait Entrance (Gently fades and scales into centre) */
+@keyframes heroPortraitEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.90) translateY(18px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Violet Halo Brightening Entrance (Slowly brightens behind her) */
+@keyframes heroHaloBrighten {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.80);
+        filter: blur(16px);
+    }
+    100% {
+        opacity: 0.85;
+        transform: translateX(-50%) scale(0.96);
+        filter: blur(32px);
+    }
+}
+
+/* Supporting Hero Left Stagger */
+@keyframes heroFadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-32px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Supporting Hero Right Stagger */
+@keyframes heroFadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(32px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bottom Cue Entrance */
+@keyframes heroFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .hero-name-heading,
+    .hero-role-heading,
+    .portrait-cutout-container,
+    .portrait-halo-glow,
+    .greeting-pill,
+    .hero-qualifications,
+    .hero-bio-summary,
+    .hero-social-row,
+    .creative-tag,
+    .hero-mantra-line,
+    .hero-quote-card,
+    .resume-wrapper,
+    .hero-bottom-cue {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .portrait-halo-glow {
+        opacity: 0.9 !important;
+        transform: translateX(-50%) !important;
+    }
 }
 
 .scroll-indicator-link {
